@@ -1,0 +1,215 @@
+body{
+    width: 80%;
+    height: 2960px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+.div1{
+    width: 80%;
+    height: 60px;
+    position: absolute;
+    margin-top: 0px;
+    float: left;
+}
+.div1 img{
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    margin-left: 18%;
+    float: left;
+}
+#s1{
+    margin-left:25% ;
+    background-color: #C1C1C1;
+    border-radius: 8px;
+    line-height: 30px;
+}
+
+.div1 div{
+    width: 100px;
+    height: 30px;
+    float: left;
+    margin-top: 15px;
+    text-align: center;
+}
+div select{
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance:none;
+    appearance:none;
+}
+.div2{
+    width: 80%;
+    height: 500px;
+    background-color: lightgray;
+    position: absolute;
+    margin-top: 60px;
+    float: left;
+}
+.div2 img{
+    width: 100%;
+    height: 500px;
+}
+.div3{
+    width: 80%;
+    height: 600px;
+    position: absolute;
+    margin-top: 560px;
+    float: left;
+}
+.div3 table{
+    width: 70%;
+    height:550px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 15%;
+}
+.div3 img{
+   width: 250px;
+    height:230px;
+}
+.div4{
+    width: 80%;
+    height: 600px;
+    position: absolute;
+    margin-top: 1160px;
+    float: left;
+    /*background: url("map1.jpg");*/
+}
+.div4 img{
+    width: 100%;
+    height: 600px;
+}
+.div4 span{
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 63%;
+}
+#s2{
+    position: absolute;
+    top:70%;
+    left:70%;
+    z-index: 1;
+    text-align: center;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #9BAA69;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+#s2 a{
+    color: white;
+    font-weight: bold;
+}
+.div5{
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    margin-top: 1760px;
+    margin-left: 15%;
+    float: left;
+}
+.div5 img{
+    width: 60px;
+    height: 60px;
+}
+.div5 div{
+    height: 280px;
+    width: 200px;
+    margin-left: 20px;
+    text-align: center;
+}
+#s3{
+    position: relative;
+    height: 30px;
+    width: 200px;
+    line-height: 30px;
+    border-radius: 8px;
+    z-index: 1;
+    background-color: #C1C1C1;
+}
+.div6{
+    width: 80%;
+    height: 600px;
+    position: absolute;
+    margin-top: 2160px;
+    float: left;
+}
+.div6 img{
+    width: 100%;
+    height: 800px;
+}
+.div6 div{
+    position: absolute;
+    top:20%;
+    left:20%;
+    z-index: 1;
+    text-align: center;
+    width: 350px;
+    height: 150px;
+}
+#s4{
+    position: relative;
+    z-index: 1;
+    left: 10%;
+    text-align: left;
+    width: 500px;
+    height: 50px;
+    /*border: 1px solid white;*/
+}
+.div7{
+    width: 80%;
+    height: 200px;
+    background-color: #333333;
+    position: absolute;
+    margin-top: 2760px;
+    float: left;
+}
+.div7 img{
+    margin-left:20%;
+    width: auto;
+    height: auto;
+}
+.div7 span{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    left: 26%;
+    top:25%;
+}
+.div7 div{
+    position: absolute;
+    left: 16%;
+    top:50%;
+    width: 50%;
+    height: auto;
+    color: white;
+    font-size: 15px;
+}
+#s5{
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    left: 60%;
+    top:25%;
+}
+#s5 div{
+    position: relative;
+    width: 30%;
+    height: 10%;
+    background-color: #FFFFFF;
+    margin-left: 10%;
+    margin-top:10%;
+}
+a:link{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+a:visited{
+    color: black;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<script>
+    //张老太的小猫，小白：白色，3岁；小花：花色，10岁
+    /*function Cat() {}
+    var cat1=new Cat();
+    cat1.name="小白";
+    cat1.color="white";
+    cat1.age=3;
+    var cat2=new Cat();
+    cat2.name="小花";
+    cat2.color="yellow";
+    cat2.age=10;
+    document.writeln(cat1.name+"是"+cat1.color+"色的，今年"+cat1.age+"岁");
+    //var 全局变量
+    var a=10;  //var表示a为全局变量
+    function test() {
+        a=100;   //没有var就表示调用该函数，最终得到的值也是这个；但是加上var表示局部变量，也就是再test中定义新的变量，最终输出的应该是全局变量
+    }
+    test();
+    window.alert(a);*/
+
+    //思考题：b.age=?
+    /*function Person() {}
+    var a=new Person();
+    a.name="xiaoming";
+    a.age=10;
+    var b=a;
+    b.name="小白";
+    delete a.age; //用delete 删除某个对象的属性，同时b页访问不到a.age
+    document.writeln(b.age+"&nbsp"+b.name+"&nbsp"+a.name); //此时a和b的age都是10岁,并且b会修改a里面的内容，输出两个小白*/
+
+    //当创建一个Person对象后，就希望自动拥有name和age两个属性，则用到this
+    /*function Person() {
+        this.name="abc"; //属性是公开的，可以访问
+        this.age=10;
+        var sex="girl"; //私有变量，用对象实例访问不到
+
+        this.show=function(){    //定义一个show方法来访问内部私有变量
+            window.alert(sex);
+            show2();  //访问私有方法
+        }
+        function show2() {  //私有方法
+            window.alert("show2()"+sex);
+        }
+    }
+    var p1=new Person();
+    p1.name="xiaohong"; //改变p1的内容不会影响p2的，使用了不同的地址
+    var p2=new Person();
+    p1.show(); //用公开的show方法来访问私有变量 ，当加入show2()后，则能够访问show2里面的信息
+    p2.show2(); //没法访问到私有方法
+    //window.alert(p1.name+"  "+p2.name);//在window.alert中认空格，但是不认"&nbsp"，与document.writeln不同*/
+
+    /*function test() {
+        alert(this.v);
+    }
+    var v=67;
+    window.test();     //等价于test();都属于window对象*/
+
+    function Person() {
+        this.abc=function () {
+            window.alert(this.v);
+        }
+    }
+    var p=new Person();
+    p.v="Hello";
+    p.abc();  //"Hello",里面的this=p
+
+</script>
+</body>
+</html>

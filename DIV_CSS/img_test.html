@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用css进行图片进行滤镜</title>
+    <style type="text/css">
+        /*.grayscale{
+            -webkit-filter:grayscale(1);}*/
+        a:link img{
+            filter: grayscale(100%);<!--灰度滤镜 -->
+            /*filter: sepia(0%);<!--发黄滤镜-->
+            filter: saturate(3);饱和滤镜数字表示-->
+            filter: invert(0%);<!--反转滤镜-->
+            filter: brightness(0%);<!--亮度滤镜-->
+            filter: contrast(0%);<!--对比度滤镜-->
+            filter: blur(2px);<!--模糊滤镜像素表示*/
+            /*一个img只能有一个滤波器*/
+        }
+        a:hover img{
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+<body>
+<a href="#"><img src="timg.jpg" width="500" /></a>&nbsp;
+<a href="#"><img src="shiliu.png" width="200"/></a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+}/*使得边缘整个清零方便布局*/
+.s1{
+    width: 600px;
+    height: 600px;
+    border: 1px solid lightgray;
+}
+.faceul{
+    width: 450px;
+    height: 450px;
+    margin: 50px;
+    border: 1px solid red;
+    list-style-type: none;/*去除li列表的原点或者方块标记*/
+}
+.faceul li{
+    width: 50px;
+    height: 50px;
+    border: 1px solid blue;
+    float: left;/*左浮动使得列表元素横向排列*/
+    margin-left: 10px;
+    margin-top: 25px;
+}
+.faceul img{
+    width: 45px;
+    height: 45px;
+    margin: 2px;
+}
+a:link{
+    color: black;
+    text-decoration: none;
+    margin-left: 15px;
+}
+a:hover{
+    color: red;
+}

@@ -1,0 +1,153 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgb(241,241,241);
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+}
+.s1{
+    width: 100%;
+    height: 1.17rem;
+    background-color: rgb(216, 45, 119);
+    color: rgb(255, 255, 255);
+    font-size: 0.37rem;
+    font-family: SourceHanSansCN-Normal;
+    text-align: center;
+    line-height: 1.17rem;
+}
+.s2{
+    width: 100%;
+    height: 2.5rem;
+    background-color: pink; /*此处需要替换背景图*/
+}
+.s2 span{
+    position: relative;
+    top:0.3rem;
+    color: rgb(51, 51, 51);
+    font-size: 0.28rem;
+    font-family: SourceHanSansCN-Normal;
+    line-height: 1.5;
+    margin-left: 6.4%;
+}
+.s3{
+    width: 100%;
+    height: 0.28rem;
+}
+.s4{
+    width: 100%;
+    height: 0.86rem;
+    line-height: 0.86rem;
+    border-bottom: 0.01rem solid rgb(241,241,241);
+    background-color: white;
+}
+.s4 span, .s7 span, .s10 span, .s13 span, .s16 span{
+    margin-left: 0.3rem;
+    color: rgb(51, 51, 51);
+    font-size: 0.36rem;
+    font-family: SourceHanSansCN-Normal;
+}
+.s5{
+    width: 100%;
+    height: 1.6rem;
+    background-color: white;
+}
+.ul{
+    padding-top: 0.29rem;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+}
+.ul li{
+    width: 20%;
+    height: 0.75rem;
+    float: left;
+    margin-left: 4%;
+}
+a:link {
+    position: relative;
+    top: 0.11rem;
+    text-decoration: none;
+    color: rgb(121, 121, 121);
+    font-size: 0.28rem;
+    font-family: SourceHanSansCN-Normal;
+}
+a:hover{
+    color: red;
+}
+a:visited{
+    color: rgb(121, 121, 121);
+}
+.s6, .s9, .s12, .s15{
+    width: 100%;
+    height: 0.18rem;
+}
+.s7, .s10, .s13, .s16{
+    width: 100%;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    background-color: white;
+    border-bottom: 0.01rem solid rgb(241,241,241);
+    float: left;
+}
+.s7 img, .s10 img, .s13 img, .s16 img{
+    width: 0.2rem;
+    height: 0.35rem;
+    margin-right: 6.4%;
+    margin-top: 0.3rem;
+    float: right;
+}
+.s7 a:link{
+    color: rgb(169, 169, 169);
+    font-size: 0.28rem;
+    font-family: SourceHanSansCN-Normal;
+    margin-left: 40%;
+}
+.s7 a:hover{color: red;}
+.s7 a:visited{color: rgb(169, 169, 169);}
+.s8, .s11, .s14{
+    width: 100%;
+    line-height: 1.04rem;
+    background-color: white;
+}
+.s8 span, .s11 span, .s14 span{
+    margin-left: 8.5%;
+    color: rgb(121, 121, 121);
+    font-size: 0.36rem;
+    font-family: SourceHanSansCN-Normal;
+}
+#special1, .s8 a:link, .s11 a:link, .s14 a:link{
+    color: rgb(216, 45, 119);
+    font-size: 0.36rem;
+}
+.s8 a:link, .s11 a:link, .s14 a:link{
+    position: relative;
+    top: 0rem;
+    text-decoration: none;
+}
+.s8 a:visited, .s11 a:visited, .s14 a:link{color: rgb(216, 45, 119);}
+
+.s17{
+    width: 100%;
+    overflow: auto;
+    background-color: white;
+}
+.s17 img{
+    width: 1.44rem;
+    height: 1.44rem;
+    border-radius: 50%;
+}
+.s17 ul{
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+}
+.s17 ul li{
+    width: 20%;
+    margin-top: 0.3rem;
+    float: left;
+    margin-left: 4%;
+    padding-bottom: 0.3rem;
+}

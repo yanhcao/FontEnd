@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgb(241,241,241);
+}
+.d1, .d2, .d3, .d5, .d6, .d7, .d8{
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    background-color: white;
+    border-bottom: 0.01rem solid rgb(241,241,241);
+    float: left;
+}
+.d1{
+    margin-top: 0.2rem;
+}
+.d1 span, .d2 span, .d3 span, .d6 span, .d7 span, .d8 span{
+    color: rgb(37, 37, 37);
+    font-size: 0.3rem;
+    font-family: SourceHanSansCN-Normal;
+    margin-left: 6.7%;
+}
+.d1 select, .d2 select, .d3 select{
+    border: none;
+    -webkit-appearance:none;
+    margin-right: 0.1rem;
+    color: rgb(179, 179, 179);
+    font-size: 0.3rem;
+    font-family: SourceHanSansCN-Normal;
+    float: right;
+    height: 0.99rem;
+    text-align: right;
+}
+.d4{
+    width: 100%;
+    height: 0.2rem;
+    float: left;
+}
+.d5 span{
+    color: rgb(216, 45, 119);
+    font-size: 0.36rem;
+    font-family: SourceHanSansCN-Normal;
+    margin-left: 6.7%;
+}
+.d6 input,.d7 input, .d8 input{
+    float: right;
+    width: 10%;
+    height: 0.99rem;
+    opacity: 0.5;
+    /*clip: rect(6 15 15 6);*/
+    background: transparent;
+    border: 0;
+}

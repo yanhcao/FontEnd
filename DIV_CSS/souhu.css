@@ -1,0 +1,82 @@
+body{
+    width: 80%;
+    height: 750px;
+    margin: 0 auto;
+}
+.s1{
+    width: 40%;
+    height: 20px;
+    background-color: aquamarine;
+}
+.s2{
+    width: 25%;
+    position: absolute;
+    left: 42%;
+    top: 0px;
+    background-color: #E7EEF4;
+}
+.s3{
+    width: 35%;
+    position: absolute;
+    left: 55%;
+    top: 0px;
+    background-color: aquamarine;
+}
+.s1,.s2,.s3{
+    font-size: 15px;
+    color: black;
+    height: 20px;
+}
+.s4{
+    position: relative;
+    width: 120px;
+    height: 80px;
+    float: left;
+}
+.s4 img{
+    width: 120px;
+    height: 80px;
+}
+.s5{
+    position: relative;
+    left: 121px;
+    width: 89%;
+    height: 80px;
+    background-color: greenyellow;
+    margin-left: 5px;
+}
+.s6{
+    position: relative;
+    float: left;
+    height: 610px;
+    width: 120px;
+    /*border: 1px solid red;*/
+    background-color: pink;
+}
+.s7{
+    position: relative;
+    float: left;
+    height: 610px;
+    width:60% ;
+    background-color:greenyellow;
+    margin-left: 5px;
+}
+.s8{
+    position: relative;
+    float: left;
+    height: 610px;
+    width:20% ;
+    background-color:greenyellow;
+    margin-left: 5px;
+}
+.s9{
+    position: relative;
+    float: left;
+    height: 610px;
+    width:90px;
+    margin-left: 5px;
+}
+.s9 img{
+    height: 610px;
+    width: 90px;
+}

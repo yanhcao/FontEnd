@@ -1,0 +1,30 @@
+body{
+    width: 1000px;
+    height:700px;
+    border: 1px solid red;
+}
+.s1{
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+#s2{
+    left: 50px;
+    top: 50px;
+    position: relative;
+}
+#s3{
+    left: 150px;/*left是向右移动，并且在absolute情况下是以body为参照物，relative是以原来物体作为参照物*/
+    top: 250px;
+    position: fixed;
+}
+.s2{
+    position: absolute;
+    left: 10px;
+    top: 200px;
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    float: left;
+}

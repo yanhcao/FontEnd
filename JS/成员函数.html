@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成员函数</title>
+</head>
+<body>
+    <script>
+        //对Person类添加如下行为：speak函数-输出我是个好人；jisuan函数-计算1到100加和；修改jisuan函数-接收输入n，计算1到n加和；add函数-计算两个数的和
+        /*function Person(name,age) {
+            this.name=name;
+            this.age=age;
+            this.show=function () {
+                document.writeln("name is "+this.name);
+            }
+            this.speak=function () {
+                document.writeln("我是个好人");
+            }
+            this.jisuan=function (n) {
+                var sum=0;
+                for(var i=1;i<=n;i++){
+                    sum+=i;
+                }
+                return sum;
+            }
+            this.add=function (num1,num2) {
+                var add_sum=num1+num2;
+                document.writeln("<br/>"+num1+"+"+num2+"=");
+                return add_sum;  //记得return
+            }
+        }
+        var p1=new Person("宋江",90);
+        p1.show();
+        var p2=new Person("林冲",20);
+        p2.show();
+        document.writeln("<br/>1到100加和等于"+p1.jisuan(50)); //p1.jisuan()后面的括号（）一定要记得写，否则打印代码出来
+        document.writeln(p1.add(1,2));*/
+
+        //第二种方式添加成员函数
+        /*function Person() {
+            this.name="abc";
+        }
+        function test() {
+            window.alert("Hello "+this.name);
+        }
+        var p=new Person();
+        p.abc=test;
+        p.name="zhongguo";  //改变了p里面的name，但是原型函数Person中的name还是abc
+        p.abc();
+        var p2=new Person();
+        p2.abc=test;
+        p2.abc();  //p2中的name还是abc
+        window.alert(p.abc);  //把test整段代码打出来,this.name不会用abc替换
+        window.alert(test);  //把test整段代码打出来，this.name不会用abc替换*/
+
+        //第三种成员函数添加方式Person.prototype,直接绑定到Person类
+        /*function Person() {
+            this.name="abc";
+        }
+        Person.prototype.test=function() {
+            window.alert("Hello "+this.name);
+        }
+        var p1=new Person();
+        var p2=new Person();
+        p1.test();
+        p2.test();*/
+
+        //第四种方法创建对象--Object类
+        /*var p=new Object();
+        p.name="abc";
+        window.alert(p.name);
+        window.alert(p.constructor);
+        window.alert(p.prototype);*/
+
+        //思考题1
+        /*var i=new Number(10);  //等价与i2=10
+        //var i2=10;
+        //window.alert(i.constructor+"  "+i2.constructor);//打印出来的i和i2的构造函数一样
+        Number.prototype.add=function (a) {   //给Number类添加方法
+            return this+a;
+        }
+        window.alert(i.add(10).add(30)); //this=10,10+10+30=50
+        var b=20;
+        window.alert(b.add(40)); //this=20, 20+40=60*/
+
+        //请思考给js的Array对象扩展一个find(val)方法，当Array调用该方法时，如果找到val，则返回其下标，否则返回-1
+        /*var arry=new Array(3);
+        arry[0]=1;
+        arry[1]=2;
+        arry[2]=3;
+        document.writeln(arry+"<br/>");
+        document.writeln(arry.push(56)+"<br/>"); //push在末尾添加变量，并且返回数组长度
+        document.writeln(arry+"<br/>");
+        document.writeln(arry.pop()+"<br/>"); //pop弹出
+        document.writeln(arry+"<br/>");
+        document.writeln(arry.reverse()); //reverse是讲整个数组颠倒 输出321
+        Array.prototype.find=function (val) {
+            for(var i=0;i<this.length;i++){
+                if(val==this[i]){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        document.writeln("<br/>val的下标是"+arry.find(5));*/
+
+        //思考3：不同参数个数的function，下面的会覆盖上面的
+        /*function abc(a) {  //abc类没有归到一个类里面，那么我们就叫他全局对象，属于window原型对象
+            window.alert(a);
+        }
+        function abc(a,b) {
+            window.alert(a+"  "+b);
+        }
+        abc(10);  //默认调用第二个，然后打印10  undeifined
+        abc(20,"ssd"); //调用第二个*/
+
+        //思考4：aguments
+        function abc() {
+            var s=0;
+            for (var i=0;i<arguments.length;i++){
+                s+=arguments[i];
+            }
+            return s;
+        }
+        window.alert(abc(1,2));
+        window.alert(abc(1,2,3));
+    </script>
+</body>
+</html>

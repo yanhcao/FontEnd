@@ -1,0 +1,36 @@
+.style1{
+    border:1px solid black;
+    width:300px;
+    height: 260px;
+}
+.paihang{
+    color: orange;
+    font-size: 30px;
+}
+.sj{
+    color: red;
+    font-style: italic;
+    background-color: gainsboro;
+}
+.wy{
+    font-style: italic;
+    text-decoration: underline;
+}
+.lu, .wy, .bao, .lk{
+    background-color: gainsboro;
+    color: black;
+}
+a:link{
+    color: red;
+    font-size: 24px;
+    font-family: 华文新魏;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    font-size: 40px;
+    font-family: 宋体;
+}
+a:visited{
+    color: gray;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡排序</title>
+</head>
+<body>
+<script>
+    //冒泡排序
+    /*var a=[2,23,22,-3,9,0,134];
+    //设置一个标志位，若没有一次进入if判断则跳出循环
+    var flag=false; //不能用False默认的关键词
+    for(var i=0;i<a.length-1;i++){
+        document.writeln("循环次数");
+        for(var j=0;j<a.length-1-i;j++){
+            if (a[j+1]<a[j]){       //<是按从小到大排列，>是从大到小排列
+                var temp=a[j+1];
+                a[j+1]=a[j];
+                a[j]=temp;
+                flag=true;
+            }
+        }
+        if(flag){
+            flag=false;
+        }else {
+            break;
+        }
+    }
+    document.writeln(a);*/
+
+    //二分查找，建立在排好序列的基础上
+    var a=[2,4,5,6,7,8,9];
+    function binarySearch(arr,findVal,left,right) {
+        //防止找不到的情况发生，无穷递归
+        if (left>right){
+            document.writeln("Flase");
+            return False; //return必须有，否则会执行下面最后一个命令输出
+        }
+        midle=arr[Math.floor((left+right)/2)];
+        document.writeln(midle+"<br/>");
+        if(findVal>midle){
+            left=Math.floor((left+right)/2);
+            document.writeln("1"+"#"+"<br/>");
+            binarySearch(arr,findVal,left,right);
+        }else if(findVal<midle){
+            right=Math.floor((left+right)/2);
+            document.writeln("1"+"#"+"<br/>");
+            binarySearch(arr,findVal,left,right);
+        }else {
+            document.writeln("要查找的值是数组的第"+(Math.floor((left+right)/2)+1)+"个元素");
+        }
+    }
+    binarySearch(a,4,0,a.length-1);
+</script>
+</body>
+</html>

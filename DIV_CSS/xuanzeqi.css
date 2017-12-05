@@ -1,0 +1,33 @@
+/*.style2就是类选择器*/
+.style2{
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    background-color:pink;
+    <!--text-decoration: underline;-->
+}
+/*#style3就是id选择器*/
+#style3{
+    font-size: 40px;
+    font-family: 华文新魏;
+    color: black;
+    background-color: gainsboro;
+}
+/*父子选择器*/
+#style3 span{
+    color: red;
+    font-style: italic;
+    font-size: 50px;
+}
+/*html元素选择器*/
+body{
+    color: orange;
+}
+/*使用通配符选择器*/
+*{
+    /*magin:0px;*/
+    padding: 0px;
+    /*margin-top: 20px;
+    margin-left: 10px;*/
+    margin: 10px 0px 0px 5px;
+}

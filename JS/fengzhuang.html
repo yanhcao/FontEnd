@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象三大特征</title>
+    <script>
+        /*function Person(name,age,sal) {
+            this.name=name;  //公开属性名字
+            var age=age;   //私有属性年龄
+            var sal=sal;  //私有属性薪水
+
+            //在类中如何定义公开方法（特权方法）和私有方法（内部方法）
+            this.show=function () {
+                window.alert(age);   //通过公开方法访问私有变量
+            }
+            //私有方法，内部可以使用所有属性，但是不允许外部p1调用
+            function show2() {
+                window.alert(age);
+            }
+        }
+        //使用prototype添加方法，但是该方法不能调用person内部的私有属性如age
+        Person.prototype.abc=function (a,b) {
+            var sum=a+b;
+            window.alert(this.name);   //访问共有属性可以
+            window.alert(sum); //不能加age，否则会出错
+            this.show();  //可以调用公有方法
+        }
+        var p1=new Person("sp",20,2000);
+        window.alert(p1.name); //私有属性不能访问
+        p1.show();
+        //p1.show2(); //不能这样使用
+        p1.abc(2,1);*/
+        
+        //继承，采用对象冒充方式实现
+        /*function Stu(name,age) {
+            this.name=name;
+            this.age=age;
+            this.show=function () {
+                //window.alert(this.name+"  "+this.age);
+                this.name_age=this.name+"&nbsp&nbsp"+this.age;
+                return this.name_age;
+            }
+        }
+        //继承
+        function midStu(name,age) {
+            this.stu=Stu;
+            this.stu(name,age);
+            this.payFee=function (money) {
+                window.alert(this.name+"请付"+money*0.5);
+            }
+            //midStu可以覆盖Stu里面的show方法
+            this.show=function () {
+                window.alert("midStu.show");
+            }
+        }
+        function pupil(name,age) {
+            this.stu=Stu;  //Stu是构造函数 ,等价于this.stu=funtion Stu(name,age);
+            this.stu(name,age);
+            this.payFee=function (money) {
+                window.alert(this.name+"请付"+money*0.1);
+            }
+        }
+
+        var p1=new midStu("John",14);
+        var p2=new pupil("Lee",8);
+        document.write(p1.show()+"<br/>");
+        p1.payFee(200);
+        document.write(p2.show());
+        //p2.show();
+        p2.payFee(100);*/
+
+        //多态，v既可以充当人，也可以充当猫
+        function Person() {
+
+        }
+        function Cat() {
+
+        }
+        var v=new Person();
+        var v=new Cat();  //v可以随时改变类型
+    </script>
+</head>
+<body>
+
+</body>
+</html>

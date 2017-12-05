@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS事件</title>
+    <link rel="stylesheet" href="事件.css" type="text/css">
+    <script>
+        function test1(e) {
+            window.alert("x="+e.clientX+"  "+"y="+e.clientY);
+//            document.writeln("x="+e.clientX+"  "+"y="+e.clientY);
+        }
+        function test2() {
+            window.alert(new Date());
+        }
+        function test3(e) {
+            var div1=document.getElementById("div1");
+            if (e.value=="黑色"){
+                div1.style.backgroundColor="black";
+            }else {
+                div1.style.backgroundColor="red";
+            }
+        }
+
+        function test4(eventObj) {
+
+            //获取事件.css文件所有的外部css
+            var ocssRlues=document.styleSheets[0].cssRules;
+            //从第一个css文件获取期望修改的css
+            var s1=ocssRlues[0]; //ocssRlues[0]表示css文件中第一个css class
+            if(eventObj.value=="黄色"){
+                s1.style.backgroundColor="yellow";
+            }else if(eventObj.value=="绿色"){
+                s1.style.backgroundColor="green";
+            }
+
+        }
+
+        //判断是何浏览器
+        if(window.XMLHttpRequest){
+            if(!window.ActiveXObject){
+                window.alert("Mozilla FF, Safari, chrome");
+            }else{
+                window.alert("ie");
+            }
+        }else {
+            window.alert("ie6");
+        }
+
+
+    </script>
+
+</head>
+<body>
+<!--1.获取鼠标点击的坐标-->
+<div onmousedown="test1(event)" style="width: 200px; height: 200px; border: 1px solid red"></div>
+
+<!--2.返回当前时间-->
+<input type="button" onclick="test2()" value="请点击显示当前时间">
+
+<!--3.按红色按钮显示红色，按黑色按钮显示黑色-->
+<div id="div1" style="width: 100px;height: 100px;background-color: red">div1</div>
+<input type="button" onclick="test3(this)" value="黑色">
+<input type="button" onclick="test3(this)" value="红色">
+
+<!--4.js获取外部css文件，然后修改style样式-->
+<div class="s1">div2</div>  <!--由于外部css的存在，无需指定id选择器-->
+<input type="button" onclick="test4(this)" value="绿色">
+<input type="button" onclick="test4(this)" value="黄色">
+</body>
+</html>

@@ -1,0 +1,27 @@
+.mariodiv{
+    width: 500px;
+    height: 400px;
+    background-color: pink;
+    position: absolute;
+}
+/*.mariodiv img{
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+    margin-top: 30px;
+    border: 1px solid red;
+}*/
+.table{
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 410px;
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+}
+.table td{
+    border: 1px solid gainsboro;
+}
+.table input{
+    border: 1px solid black;
+}

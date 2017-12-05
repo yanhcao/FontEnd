@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多态经典案例--人喂猫和狗</title>
+    <script>
+        //食物：骨头、肉；主人；动物：猫、狗
+        /*function Master() {
+            this.feed=function (animal,food) {
+                window.alert(animal.constructor); //animal与food都是构造函数
+                document.writeln("主人给"+animal.name+"喂"+food.name+"<br/>");
+            }
+        }
+        function Food(name) {
+            this.name=name;
+        }
+        //两个食物子类
+        function Fish(name) {
+            this.food=Food;
+            this.food(name);
+        }
+        function Bone(name) {
+            this.food=Food;
+            this.food(name);
+        }
+        //新加桃子
+        function Peach(name) {
+            this.food=Food;
+            this.food(name);
+        }
+        //动物类
+        function Animal(name) {
+            this.name=name;
+        }
+        //两个动物子类
+        function Cat(name) {
+            this.animal=Animal;
+            this.animal(name);
+        }
+        function Dog(name) {
+            this.animal=Animal;
+            this.animal(name);
+        }
+        //新加猴子
+        function Monkey(name) {
+            this.animal=Animal;
+            this.animal(name);
+        }
+        var fish=new Fish("小鱼");
+        var bone=new Bone("骨头");
+        var cat=new Cat("小猫");
+        var dog=new Dog("小狗");
+
+        var p1=new Master();
+        p1.feed(cat,fish);
+        p1.feed(dog,bone);
+        p1.feed(new Monkey("猴子"),new Peach("桃子"));*/
+
+        //闭包
+        function a() {
+            var i=0;
+            function b() {
+                window.alert(++i); //i=1
+            }
+            return b;
+        }
+        var c=a();
+        c(); //输出1
+    </script>
+</head>
+<body>
+
+</body>
+</html>

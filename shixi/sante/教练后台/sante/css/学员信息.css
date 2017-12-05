@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgb(241,241,241);
+}
+.s1{
+    width: 100%;
+    height: 1.54rem;
+    background-color: rgb(112, 197, 190);
+    z-index: 0;
+}
+.s2{
+    width: 100%;
+    height: 2.58rem;
+    background-color: white;
+}
+.s2 span{
+    position: relative;
+    top: 1.68rem;
+    left: 6.7%;
+    color: rgb(66, 186, 186);
+    font-size: 0.36rem;
+    font-family: SourceHanSansCN-Normal;
+}
+.s2 div{
+    position: relative;
+    top: 1.2rem;
+    left: 30%;
+    width: 60%;
+    text-align: center;
+    color: rgb(37, 37, 37);
+    font-size: 0.3rem;
+    font-family: SourceHanSansCN-Normal;
+}
+.img{
+    width: 30%;
+    height: 2.35rem;
+    position: absolute;
+    top:0.565rem;
+    left: 35%;
+    text-align: center;
+}
+.img img{
+    width: 1.44rem;
+    height: 1.44rem;
+    border-radius: 50%;
+    border: 0.255rem solid white;
+}
+a:link {
+    text-decoration: none;
+    color: rgb(108, 108, 108);
+    font-size: 0.4rem;
+    font-family: SourceHanSansCN-Normal;
+}
+a:hover{
+    color: red;
+}
+a:visited{
+    color: rgb(108, 108, 108);
+}
+.s3, .s5, .s7, .s9{
+    width: 100%;
+    height: 0.2rem;
+}
+.s4, .s6, .s8, .s10{
+    width: 100%;
+    height: 1.94rem;
+    background-color: white;
+}
+.s4 span, .s6 span, .s8 span, .s10 span{
+    position: relative;
+    top: 0.4rem;
+    left: 6.7%;
+    color: rgb(66, 186, 186);
+    font-size: 0.36rem;
+    font-family: SourceHanSansCN-Normal;
+}
+.s4 hr, .s6 hr, .s8 hr, .s10 hr{
+    position: relative;
+    left: 3%;
+    width: 93%;
+    top: 0.4rem;
+    color: rgb(217, 218, 220);
+}
+.s4 div, .s6 div, .s8 div, .s10 div{
+    position: relative;
+    top: 0.4rem;
+    left: 6.7%;
+    width: 93.3%;
+    color: rgb(37, 37, 37);
+    font-size: 0.3rem;
+    font-family: SourceHanSansCN-Normal;
+}
+

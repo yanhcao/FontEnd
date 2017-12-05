@@ -1,0 +1,594 @@
+body{
+    width: 100%;
+    height: 5181px;
+    margin: 0 auto;
+    /*border: 1px solid black;*/
+    min-width: 1300px;
+}
+.div1{
+    width: 100%;
+    height: 127px;
+    position: absolute;
+    margin: 0px;
+    float: left;
+    min-width: 1300px;
+}
+.div1 img{
+    position: absolute;
+    left: 18.75%;
+    top: 28px;
+    width: 7.3%;
+    height: 99px;
+    float: left;
+    z-index: 1;
+}
+.div1 span{
+    font-size: 18px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+}
+.首页{
+    border-radius: 10px;
+    background-color: #d6d6d6;
+    position: absolute;
+    left: 27%;
+    top: 47px;
+    width: 7.3%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    z-index: 1;
+}
+
+.关于沃农{
+    position: absolute;
+    left: 34.9%;
+    top: 47px;
+    width: 7.29%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+}
+.沃农资讯1{
+    position: absolute;
+    left: 42.8%;
+    top: 47px;
+    width: 7.29%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+}
+.业务布局{
+    position: absolute;
+    left: 50.7%;
+    top: 47px;
+    width: 7.29%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+}
+.核心优势{
+    position: absolute;
+    left: 58.6%;
+    top: 47px;
+    width: 7.29%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+}
+.上游基地{
+    font-size: 18px;
+    position: absolute;
+    left: 66.5%;
+    top: 47px;
+    width: 7.29%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+}
+.联系我们{
+    position: absolute;
+    left: 74.4%;
+    top: 47px;
+    width: 7.29%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+}
+.div1 select{
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance:none;
+    appearance:none;
+}
+.div2{
+    position: absolute;
+    top: 127px;
+    left: -2px;
+    width: 100%;
+    height: 891px;
+    min-width: 1300px;
+}
+.div2 img{
+    position: absolute;
+    width: 100%;
+    height: 891px;
+    min-width: 1300px;
+}
+.div3{
+    position: absolute;
+    top:1018px;
+    left: -2px;
+    width: 100%;
+    height: 1029px;
+    float: left;
+    min-width: 1300px;
+}
+.沃农资讯{
+    position: relative;
+    top: 70px;
+    width: 100%;
+    height: 73px;
+    font-size: 50px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+.Wonong{
+    position: relative;
+    top: 49px;
+    width: 100%;
+    height: 47px;
+    font-size: 40px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+.果园2{
+    position: relative;
+    left: 18.9%;
+    top: 80px;  /*258px;*/
+    width: 19.8%;
+    height: 318px;
+    float: left;
+    /*border: 1px solid blue;*/
+    z-index: 2;
+}
+.果园2 img{
+    width: 100%;
+    height:318px;
+}
+.Euro1 span, .Euro2 span, .Euro3 span{
+    font-size: 30px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    line-height: 1.2;
+    position: relative;
+    left: 2%;
+    top: 20px;
+}
+.Euro1 p, .Euro2 p, .Euro3 p{
+    font-size: 18px;
+    font-family: "微软雅黑";
+    line-height: 1.2;
+    position: relative;
+    left: 2%;
+    top: 35px;
+}
+.Euro1 i, .Euro2 i, .Euro3 i{
+    font-size: 18px;
+    font-family: "微软雅黑";
+    line-height: 2;
+    position: relative;
+    left: 2%;
+    top: 35px;
+}
+.Euro1{
+    position: relative;
+    left: 21.56%;
+    top: 80px;
+    width: 19.8%;
+    height: 318px;
+    float: left;
+    /*border: 1px solid red;*/
+    z-index: 2;
+}
+.果园1{
+    position: relative;
+    left:23.94%;
+    top: 80px;
+    width: 19.8%;
+    height: 318px;
+    float: left;
+    /*border: 1px solid blue;*/
+    z-index: 2;
+}
+.果园1 img{
+    width: 100%;
+    height:318px;
+}
+.Euro2{
+    position: absolute;
+    left: 18.9%;
+    top: 605px;
+    width: 19.8%;
+    height: 318px;
+    float: left;
+    /*border: 1px solid red;*/
+    z-index: 2;
+}
+.果园3{
+    position: absolute;
+    left: 41.53%;
+    top: 605px;
+    width: 19.8%;
+    height: 318px;
+    float: left;
+    /*border: 1px solid blue;*/
+    z-index: 2;
+}
+.果园3 img{
+    width: 100%;
+    height:318px;
+}
+.Euro3{
+    position: absolute;
+    left:63.8%;
+    top: 605px;
+    width: 19.8%;
+    height: 318px;
+    float: left;
+    /*border: 1px solid blue;*/
+    z-index: 2;
+}
+.div4{
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    top: 2047px;
+    left: -2px;
+    float: left;
+    min-width: 1300px;
+}
+.div4 img{
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    float: left;
+}
+.div4 span{
+    font-size: 60.386px;
+    font-family: "宋体";
+    color: white;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.75);
+    position: relative;
+    left: 62.21%;
+    top: 500px;
+    z-index: 2;
+    float: left;
+}
+#s1{
+    font-size: 30px;
+    font-family: "微软雅黑";
+    color: white;
+    position: relative;
+    top: 716px;
+    left: 44.2%;
+    width: 10.2%;
+    height: 56px;
+    background-color: #9dab6a;
+    border-radius: 10px;
+    border: 2px solid white;
+    line-height: 56px;
+    z-index: 3;
+}
+.div5{
+    position: absolute;
+    top: 3047px;
+    left: -2px;
+    width: 100%;
+    height: 811px;
+    min-width: 1300px;
+}
+.沃农优势{
+    position: relative;
+    top: 85px;
+    width: 100%;
+    height: 73px;
+    font-size: 50px;
+    font-family: "宋体";
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+.Wonong_A{
+    position: relative;
+    top: 69px;
+    width: 100%;
+    height: 47px;
+    font-size: 40px;
+    font-family: "宋体";
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+.运输, .销售, .团队{
+    position: relative;
+    width: 19.583%;
+    height: 508px;
+    top:150px;
+    float: left;
+}
+.运输{
+    left: 18.75%;
+}
+.运输 img{
+    position: relative;
+    width: 37.2%;
+    left: 31.4%;
+    top:24px;
+}
+.运输 span{
+    position: relative;
+    top:35px;
+    left: 16.7%;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    line-height: 1.2;
+    width: 72.4%;
+    height: 68px;
+    text-align: center;
+}
+.运输 p{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 18px;
+}
+#6000平米{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    font-family: "微软雅黑";
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: left;
+}
+.查看详情1{
+    position: relative;
+    top:52px;
+    left: 5%;
+    width: 90%;
+    height: 80px;
+    border: 0.5px solid #c1c1c1;
+    border-radius: 10px;
+    background-color: #c1c1c1;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    text-align: center;
+    line-height: 80px;
+}
+.销售{
+    left: 20.45%;
+}
+.销售 img {
+    position: relative;
+    width: 37.2%;
+    left: 31.4%;
+    top: 24px;
+}
+.销售 span{
+    position: relative;
+    top:35px;
+    left: 30%;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    line-height: 1.2;
+    text-align: center;
+    width: 72.4%;
+    height: 68px;
+}
+.销售 p{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 18px;
+}
+#丰富的渠道资源{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    font-family: "微软雅黑";
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: left;
+}
+.查看详情2{
+    position: relative;
+    top: 50px;
+    left: 5%;
+    width: 90%;
+    height: 80px;
+    border: 0.5px solid #c1c1c1;
+    border-radius: 10px;
+    background-color: #c1c1c1;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    text-align: center;
+    line-height: 80px;
+}
+.团队{
+    left: 22.15%;
+}
+.团队 img {
+    position: relative;
+    width: 37.2%;
+    left: 31.4%;
+    top: 24px;
+}
+.团队 span{
+    position: relative;
+    top:35px;
+    left: 30%;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    line-height: 1.2;
+    text-align: center;
+    width: 72.4%;
+    height: 68px;
+}
+.团队 p{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 18px;
+}
+#管理团队{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    font-family: "微软雅黑";
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: left;
+}
+.查看详情3 {
+    position: relative;
+    top: 50px;
+    left: 5%;
+    width: 90%;
+    height: 80px;
+    border: 0.5px solid #c1c1c1;
+    border-radius: 10px;
+    background-color: #c1c1c1;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    text-align: center;
+    line-height: 80px;
+}
+.div6{
+    position: absolute;
+    top: 3928px;
+    left: -2px;
+    width: 100%;
+    height: 1253px;
+    min-width: 1300px;
+}
+.div6 img{
+    position: absolute;
+    left: -2px;
+    width: 100%;
+    height: 1253px;
+}
+.追本溯源{
+    position: relative;
+    left: 18.85%;
+    top: 128px;
+    width: 50%;
+    font-size: 120px;
+    font-family: "宋体";
+    color: white;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.75);
+    z-index: 2;
+}
+.拓深产业链{
+    position: absolute;
+    left: 18.85%;
+    top: 458px;
+    font-size: 30px;
+    font-family: "微软雅黑";
+    color: white;
+    line-height: 1.2;
+    z-index: 2;
+}
+.div7{
+    position: absolute;
+    top: 4734px;
+    left: -2px;
+    width: 100%;
+    height: 447px;
+    background-color: #333333;
+    min-width: 1300px;
+}
+.aa{
+    position: relative;
+    left: 18.75%;
+    top:0px;
+    width: 5%;
+    height: 128px;
+    float: left;
+}
+.aa img{
+    width: 100%;
+    height: 128px;
+}
+.联系{
+    position: relative;
+    left: 25.4%;
+    top: 73px;
+    width: 15%;
+    font-size: 24px;
+    font-family: "微软雅黑";
+    color: white;
+    line-height: 1.5;
+    z-index: 2;
+}
+.地址{
+    position: relative;
+    left: 25.4%;
+    top: 135px;
+    font-size: 18px;
+    font-family: "微软雅黑";
+    color: white;
+    line-height: 2;
+    width: 40%;
+    height: 134px;
+    z-index: 2;
+}
+.地址 img{
+    height: 18px;
+    width: 18px;
+}
+.友情链接{
+    position: absolute;
+    left: 68%;
+    top: 73px;
+    width: 15%;
+    font-size: 24px;
+    font-family: "微软雅黑";
+    color: white;
+    line-height: 1.5;
+    z-index: 1;
+}
+input{
+    position: absolute;
+    left: 68%;
+    top: 139px;
+    width: 15.6%;
+    height: 40px;
+}
+#tel{
+    position: relative;
+    left: 12%;
+}
+a:link{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+a:visited{
+    color: black;
+}

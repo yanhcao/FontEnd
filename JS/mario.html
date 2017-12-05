@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超级马里奥</title>
+    <script>
+        function Mario() {
+            this.x=0;
+            this.y=0;
+            //设置移动，0->上 1->右 2->下  3->左（顺时针旋转）
+            this.move=function (direction) {
+                var mymario=document.getElementById("mymario");
+                var top=mymario.style.top;
+                top=parseInt(top.substr(0,top.length-2));
+                var left=mymario.style.left;
+                left=parseInt(left.substr(0,left.length-2));
+                switch (direction){
+                    case 0:
+                        //window.alert("up");
+                        //按键改变图片的left和top，必须获得img元素
+                        //var mymario=document.getElementById("mymario"); //id选择器的名字
+                        //window.alert(mymario.style.top);
+                        //得到mario的left和top坐标然后将像素加和，但是得先把20px后面的px去掉，然后加和，用到substr函数
+                        //var left=mymario.style.left; //20px
+                        //var top=mymario.style.top;   //20px
+                        //window.alert(left.substr(0,left.length-2)); //变成20,去掉了后面的px
+                        //top=parseInt(top.substr(0,top.length-2));
+                        if(top==0){
+                            window.alert("走到边界了");
+                        }else if(top==350&&left==250){
+                            window.alert("mario抓住蘑菇了");
+                            mymario.style.top=(top-50)+"px";
+                        } else {
+                            mymario.style.top=(top-50)+"px";}
+
+                        break;
+                    case 1:
+                        if(left==450){
+                            window.alert("走到边界了");
+                        } else if(left==200&&top==300){
+                            window.alert("mario抓住蘑菇了");
+                            mymario.style.left=(left+50)+"px";
+                        }else {
+                            mymario.style.left=(left+50)+"px";}
+                        break;
+                    case 2:
+                        if(top==350){
+                            window.alert("走到边界了");
+                        }else if(top==250&&left==250){
+                            window.alert("mario抓住蘑菇了");
+                            mymario.style.top=(top+50)+"px";
+                        }else {
+                            mymario.style.top=(top+50)+"px";}
+                        break;
+                    case 3:
+                        if(left==0){
+                            window.alert("走到边界了");
+                        }else if(left==300&&top==300){
+                            window.alert("mario抓住蘑菇了");
+                            mymario.style.left=(left-50)+"px";
+                        }else {
+                            mymario.style.left=(left-50)+"px";}
+                        break;
+                }
+            }
+        }
+        //创建一个mario对象
+        var mario=new Mario();
+
+        //全局函数
+        function marioMove(direction) {
+            switch (direction) {
+                case 0:
+                    mario.move(direction);
+                    break;
+                case 1:
+                    mario.move(direction);
+                    break;
+                case 2:
+                    mario.move(direction);
+                    break;
+                case 3:
+                    mario.move(direction);
+                    break;
+            }
+
+        }
+    </script>
+    <link rel="stylesheet" href="mario.css">
+</head>
+<body>
+<div class="mariodiv">
+<img  style="width: 50px; height: 50px; left: 0px; top: 0px; position: absolute" src="mario.jpg" id="mymario"/>
+<img  style="width: 50px; height: 50px; left: 250px; top: 300px; position: absolute" src="mogu.jpg">
+</div>
+<table class="table" cellspacing="0">
+    <tr align="center" ><td colspan="3">游戏键盘</td></tr>
+    <!--onclick调用全局函数marioMove（）来响应button-->
+    <tr align="center"><td></td><td><input type="button" value="↑↑" onclick="marioMove(0)"></td><td></td></tr>
+    <tr align="center"><td><input type="button" value="←" onclick="marioMove(3)"></td><td></td><td><input type="button" value="→" onclick="marioMove(1)"></td></tr>
+    <tr align="center"><td></td><td><input type="button" value="↓↓" onclick="marioMove(2)"></td><td></td></tr>
+</table>
+</body>
+</html>

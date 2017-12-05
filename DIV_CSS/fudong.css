@@ -1,0 +1,14 @@
+body{
+    width: 170px;
+    height: 350px;
+    border-left: 1px solid pink;
+    border-top: 1px solid pink;
+}
+.s1{
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+    border: 1px solid blue;
+    background-color: pink;
+    text-align: center;
+}

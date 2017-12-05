@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多个符号</title>
+</head>
+<body>
+<script>
+    /*var val=window.prompt("请输入值");
+    var val2=window.prompt("请再输入一个值");
+    //document与window不能同时出现，否则页面不予反应
+    //document.writeln("你的输入是"+(parseFloat(val)+parseFloat(val2));
+    num1=parseFloat(val);
+    num2=parseFloat(val2);
+
+    if(num1 == num2){
+        window.alert("等于");
+    }
+    else if(num1>num2){
+        window.alert("第一个大于第二个");
+    }
+    else{
+        window.alert("第一个小于第二个");
+    }*/
+   /* var a=90;
+    var b=57;
+    if((a>b)||(++b>65)){window.alert("ok1")}
+    else {window.alert("notok")}
+    window.alert("b="+b);*/
+
+    /*var a=null; //还有""、0、False、undeifine、NaN
+    if(!a){window.alert("ok!")}
+
+    //在js中或||返回的是什么：返回第一个不为False的值或者（全部为Flase时）返回最后一个的值
+    var a=0;
+    var b="";
+    var obj=new Object();
+    var c=a||b||obj;
+    window.alert(c + typeof c);*/
+
+    /*var a=4>>2;//右移
+    var b=4<<2;//左移
+    var c=-4<<2;
+    document.writeln(a); //1
+    document.writeln(b); //16
+    document.writeln(c); //-16*/
+
+    /*var sex=window.prompt("请输入性别");
+    if(sex=="男"){window.alert("上男厕所");}
+    else if(sex=="女"){window.alert("上女厕所");}
+    else {window.alert("不许上厕所");}*/
+
+    var a=window.prompt("请输入一个数字");
+    a=parseFloat(a);
+    var b=1;
+    switch (a){
+        case 1: window.alert("1");break;  //case后面的1是数字，所以必须用parseFloat转换，除非case "1":case后面跟字符串
+        case 2: window.alert("2");break;
+        default: window.alert("不是1和2");break;
+    }
+    window.alert("end");
+
+</script>
+</body>
+</html>

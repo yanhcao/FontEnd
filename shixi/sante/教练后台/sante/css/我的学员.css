@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgb(241,241,241);
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+}
+.style{
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+    overflow: auto;
+}
+.faceul{
+    padding-top: 0.84rem;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    z-index: 2;
+}
+.faceul li{
+    width: 1.44rem;
+    height: 2.1rem;
+    float: left;
+    margin-left: 4%;
+    margin-bottom: 0.84rem;
+}
+.faceul img{
+    width: 1.44rem;
+    height: 1.44rem;
+    border: 0.02rem solid rgb(176, 226, 226);
+    border-radius: 50%;
+}
+
+a:link {
+    position: relative;
+    top: 0.36rem;
+    text-decoration: none;
+    color: rgb(108, 108, 108);
+    font-size: 0.28rem;
+    font-family: SourceHanSansCN-Normal;
+}
+a:hover{
+    color: red;
+}
+a:visited{
+    color: rgb(108, 108, 108);
+}

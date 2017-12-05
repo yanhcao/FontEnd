@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统管理-系统管理1</title>
+    <script>
+        function show(c_Str)
+        {if(document.all(c_Str).style.display=='none')
+        {document.all(c_Str).style.display='block';}
+        else{document.all(c_Str).style.display='none';}}
+        function high(){
+            if (event.srcElement.className=="k"){
+                event.srcElement.style.background="00A0E9"
+                event.srcElement.style.color="white"
+            }
+        }
+        function low(){
+            if (event.srcElement.className=="k"){
+                event.srcElement.style.background="5E5E5E"
+                event.srcElement.style.color=""
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="双益股份.css">
+</head>
+<body>
+<div class="div1">
+    <img src="logo.png">
+    <div class="双益股份"><span>双益股份</span></div>
+    <div class="后台管理系统"><span>后台管理系统</span></div>
+    <div class="登陆">
+        <table>
+            <tr>
+                <td>您好: usrname　　</td>
+                <td><img src="psw.png" id="s1"/> <a href="$">修改密码　　</a></td>
+                <td><img src="logout.png" id="s2"/><a href="login.html">退出系统</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="div2"></div>
+<div class="div3">
+    <img src="background.png">
+    <div class="导航栏">
+        <table>
+            <tr>
+                <td><div class=up onclick=show("a0")>　<img src="1.png"> <span onclick="this.innerHTML='代理/经销商管理 v'"> 代理/经销商管理 ></span></div><div onmouseover=high() onmouseout=low() id=a0 style="display:none">
+                    <li class="k"><a href="管理1.html">管理1　　　　　　</a></li>
+                    <li class="k"><a href="管理2.html">管理2　　　　　　</a></li>
+                </td>
+            </tr>
+            <tr>
+                <td><div class=up onclick=show("a1")>　<img src="2.png"> <span onclick="this.innerHTML='代理/经销商奖励 v'"> 代理/经销商奖励 ></div><div onmouseover=high() onmouseout=low() id=a1 style="display:none">
+                    <li class="k"><a href="奖励1.html">奖励1　　　　　　</a></li>
+                    <li class="k"><a href="奖励2.html">奖励2　　　　　　</a></li>
+                </td>
+            </tr>
+            <tr>
+                <td><div class=up onclick=show("a2")>　<img src="3.png"> <span onclick="this.innerHTML='用户管理 v'"> 用户管理 ></div><div onmouseover=high() onmouseout=low() id=a2 style="display:none">
+                    <li class="k"><a href="用户管理1.html">用户管理1　　　　</a></li>
+                    <li class="k"><a href="用户管理2.html">用户管理2　　　　</a></li>
+                </td>
+            </tr>
+            <tr>
+                <td><div class=up onclick=show("a3")>　<img src="4.png"> <span onclick="this.innerHTML='商品管理 v'"> 商品管理 ></div><div onmouseover=high() onmouseout=low() id=a3 style="display:none">
+                    <li class="k"><a href="商品管理1.html">商品管理1　　　　</a></li>
+                    <li class="k"><a href="商品管理2.html">商品管理2　　　　</a></li>
+                </td>
+            </tr>
+            <tr>
+                <td><div class=up onclick=show("a4")>　<img src="5.png"> <span onclick="this.innerHTML='奖励策略管理 v'"> 奖励策略管理 ></div><div onmouseover=high() onmouseout=low() id=a4 style="display:none">
+                    <li class="k"><a href="奖励管理1.html">奖励管理1　　　　</a></li>
+                    <li class="k"><a href="奖励管理2.html">奖励管理2　　　　</a></li>
+                </td>
+            </tr>
+            <tr>
+                <td><div class=up onclick=show("a5")>　<img src="6.png"> <span onclick="this.innerHTML='系统管理 v'"> 系统管理 ></div><div onmouseover=high() onmouseout=low() id=a5 style="display:none">
+                    <li class="k"><a href="系统管理1.html">系统管理1　　　　</a></li>
+                    <li class="k"><a href="系统管理2.html">系统管理2　　　　</a></li>
+                </td>
+            </tr>
+            <tr>
+                <td><div class=up onclick=show("a6")>　<img src="7.png"> <span onclick="this.innerHTML='区域管理 v'"> 区域管理 ></div><div onmouseover=high() onmouseout=low() id=a6 style="display:none">
+                    <li class="k"><a href="区域管理1.html">区域管理1　　　　</a></li>
+                    <li class="k"><a href="区域管理2.html">区域管理2　　　　</a></li>
+                </td>
+            </tr>
+            <tr>
+                <td><div class=up onclick=show("a7")>　<img src="8.png"> <span onclick="this.innerHTML='车型管理 v'"> 车型管理 ></div><div onmouseover=high() onmouseout=low() id=a7 style="display:none">
+                    <li class="k"><a href="品牌车型.html">品牌车型　　　　　</a></li>
+                    <li class="k"><a href="类型管理.html">类型管理　　　　　</a></li>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="div4">
+        <div class="位置"><span>　　位置 : 系统管理 > 系统管理1</span></div>
+        <div class="按钮1">
+            <a href="&">添加类型</a>
+        </div>
+        <span>　　　</span>
+        <div class="按钮2">
+            <a href="&">批量导入</a>
+        </div>
+        <div class="表格">
+            <table  border="1" bordercolor="#F0F0F0" cellspacing="0px">
+                <tr style="background-color: #F8F8F8"><td>序号</td><td>名称</td><td>图片</td><td>权重</td><td>操作人</td><td>操作时间</td><td>操作</td></tr>
+                <tr>
+                    <td>01</td>
+                    <td>商品577</td>
+                    <td><img src="car.png"/></td>
+                    <td>2</td>
+                    <td>张王传</td>
+                    <td>2017.06.17 15:30</td>
+                    <td><a href="＠">查看类型</a>|<a href="＠">修改</a>|<a href="＠">删除</a></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>文章211</td>
+                    <td><img src="car.png"/></td>
+                    <td>2</td>
+                    <td>张王传</td>
+                    <td>2017.06.17 15:30</td>
+                    <td><a href="＠">查看类型</a>|<a href="＠">修改</a>|<a href="＠">删除</a></td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td><a href="http://www.baidu.com">www.baidu.com</a></td>
+                    <td><img src="car.png"/></td>
+                    <td>2</td>
+                    <td>张王传</td>
+                    <td>2017.06.17 15:30</td>
+                    <td><a href="＠">查看类型</a>|<a href="＠">修改</a>|<a href="＠">删除</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="div5"></div>
+<span class="power">POWERED　BY　北京微普科创科技有限公司</span>
+</body>
+</html>

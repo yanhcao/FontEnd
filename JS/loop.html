@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环</title>
+</head>
+<body>
+<script>
+    //for循环
+    /*for(var i=0; i<10;i++){
+        document.writeln("你好"+i+"号<br/>");
+    }*/
+
+    //do while循环
+    /*var i=0
+    do{
+        document.writeln("你好"+i+"号<br/>");
+        i++;
+       }while (i<10);*/
+    //设计一个程序，接受输入n，然后计算1+2+。。。+n，和1！+2！+...+n!的值
+    /*var n=window.prompt("请输入一个整数");
+    n=parseInt(n);
+    var sum=0;
+    var num=0;
+    for(var i=1;i<=n;i++){
+        var jc=1;
+        for(var j=1;j<=i;j++){
+            jc=jc*j;
+        }
+        document.writeln(jc+"<br/>");
+        sum=sum+i;
+        num=num+jc;
+    }
+    document.writeln("求和的结果是"+sum+"<br/>");
+    document.writeln("阶乘的结果是"+num);*/
+
+    //打印半个金字塔
+    var n=window.prompt("请输入整数n");
+    n=parseInt(n);
+    for(var i=1;i<=n;i++){
+        for(var j=1;j<=i;j++) {
+            document.writeln("*");
+        }
+        document.writeln("<br/>");
+    }
+    document.writeln("<br/>");
+    //打印整个金字塔
+    //var n=window.prompt("请输入整数n");
+    for(var i=1;i<=n;i++){
+        for(var j=1;j<=n-i;j++) {
+            document.writeln("　");
+        }
+        for(var m=1;m<=(2*i-1);m++) {
+            document.writeln("＊");
+        }
+        document.writeln("<br/>");
+    }
+    document.writeln("<br/>");
+
+    //打印菱形
+    for(var i=1;i<=n;i++){
+        for(var j=1;j<=n-i;j++) {
+            document.writeln("　");
+        }
+        for(var m=1;m<=(2*i-1);m++) {
+            document.writeln("＊");
+        }
+        document.writeln("<br/>");
+    }
+    for(var i=n-1;i>=1;i--){
+        for(var j=n-i;j>=1;j--) {
+            document.writeln("　");
+        }
+        for(var m=(2*i-1);m>=1;m--) {
+            document.writeln("＊");
+        }
+        document.writeln("<br/>");
+    }
+    document.writeln("<br/>");
+
+    //打印空心金字塔
+    for(var i=1;i<=n;i++){
+        for(var j=1;j<=(2*n-1);j++) {
+            if(j==(n-i+1) || j==(n+i-1)){
+                document.writeln("＊");
+            }
+            else {
+                document.writeln("　");
+        }
+        document.writeln("<br/>");
+    }
+    document.writeln("<br/>");
+    document.writeln("<br/>");
+    //打印空心菱形
+    for(var i=1;i<=2*n-1;i++){
+        for(var j=1;j<=(2*n-1);j++) {
+            if(j==(n-i+1) || j==(n+i-1) || j==(i+1-n) || j==(3*n-i-1) ){
+                document.writeln("＊");
+            }
+            else {
+                document.writeln("　");
+            }
+        }
+        document.writeln("<br/>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body{
+    border: 1px solid red;
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;/*0表示上下边距0.auto表示左右居中*/
+}
+.s1{
+    border: 1px solid;
+    border-left: 1px solid blue;
+    border-bottom:1px solid yellow;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.s1 img{
+    width: 180px;
+    /*margin-left: 5px;
+    margin-top: 5px;*/
+    padding: 10px;
+}
