@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试新窗口</title>
+    <script>
+        function test() {
+            var val=$("info").value; //获取输入框输入的文本
+            window.alert(val);
+            opener.$("myspan").value=val; //获取父窗口更改元素的value，然后修改,重点是opener
+        }
+        function $(id) {  //简化代码，采用$代替前面的获取id号
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<body>
+我是新窗口<br/>
+<input type="text" value="" id="info"><input type="button" value="通知父窗口更换内容" onclick="test()">
+</body>
+</html>

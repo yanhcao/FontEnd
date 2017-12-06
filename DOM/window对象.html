@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window</title>
+    <script>
+        function test1() {
+            var res=window.confirm("你要删除吗"); //confirm是显示消息以及确认按钮和取消按钮的对话框
+            if (res){
+                window.alert("删除");
+            }else {
+                window.alert("放弃删除");
+            }
+        }
+//        2.setIterval()设置ms周期-sayHello编写一个函数每隔2s弹出一个hello
+        function sayHello() {
+            window.confirm("Hello");
+        }
+//       window.setInterval("sayHello()",2000); //周期为2000ms
+//        设置一个时钟
+        function time() {
+            document.getElementById("mytime").innerText=new Date().toLocaleString();
+        }
+        window.setInterval("time()", 1000);
+        var n=0;
+        var count=0;
+        var k=1;
+        function run() {
+            if(count++>8){   //10步
+                clearInterval(mytimer); //mytimer是由setInterval返回的
+//                setTimeout("run()",3000);  //3s后调用run函数，但是只走一步也就是只调用一次run()
+                var out=setTimeout("rerun()",3000);
+                count=0;
+                k++;
+                if(k==6){  //重复五次后停止
+                    clearTimeout(out);
+                }
+            }
+            var img=document.getElementById("myimg");
+            img.src=((n++%3)+1)+".png";
+        }
+        var mytimer=setInterval("run()", 100);
+        function rerun() {
+            mytimer=setInterval("run()", 100);
+        }
+//        window.setTimeout("sayHello()",5000);
+
+        function test4() {
+            window.moveTo(100,100);  //与浏览器设置有关，新打开窗口时才奏效
+            window.moveBy(100,100);
+        }
+        function test5() {
+            window.resizeTo(300,400);  //修改窗口到500px，400px
+        }
+        function test6() {
+//            open("DOM关系.html", "_blank","channelmode=yes, fullscreen=yes, status=yes, width=400px, height=400px, resizeable=no, location=no"); //_blank(新打开)与_self(覆盖当前)
+            var newWindow=open("newWindow.html","_blank");
+        }
+        function test7() {
+            newWindow.document.getElementById("info").value=document.getElementById("change").value;
+        }
+    </script>
+</head>
+<body>
+<!--&lt;!&ndash;1.confirm-test1&ndash;&gt;-->
+<!--<input type="button" value="删除记录" onclick="test1()">-->
+
+<!--&lt;!&ndash;2.设置一个时钟&ndash;&gt;-->
+<!--<span id="mytime"></span><br/><br/>-->
+<!--&lt;!&ndash;3.会动的图片&ndash;&gt;-->
+<!--<img src="1.png" id="myimg"/>-->
+<!--4.移动窗口到指定的坐标-->
+<!--我是一个窗口<input type="button" onclick="test4()" value="移动">-->
+<!--5.改变窗口大小-->
+<!--<input type="button" onclick="test5()" value="改变窗口大小">-->
+<!--6.新打开窗口-->
+<input type="button" onclick="test6()" value="新打开窗口">
+<span id="myspan">消息</span>
+<input type="text" value="" id="change"><input type="button" value="通知子窗口" onclick="test7()">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆成功</title>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+//        setTimeout("ok()", 5000);
+//        function ok() {
+//            open("newWindow.html","_self");
+//        }
+        //也可以采用如下简略方式
+        setTimeout("javascript: window.open('newWindow.html','_self')", 5000);
+        function changesec() {
+            $("changetime").innerText--;
+        }
+        setInterval("changesec()", 1000);  //在跳转函数写一个clearInterval()
+//        if(parseInt($("changetime").innerText)>0){
+//            setInterval("changesec()", 1000);
+//        }
+    </script>
+</head>
+<body>
+<h1>恭喜登陆成功</h1>
+<span><b id="changetime">5</b>s后自动跳转至新窗口</span>
+</body>
+</html>
