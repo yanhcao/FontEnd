@@ -10,8 +10,9 @@
             //设置移动，0->上 1->右 2->下  3->左（顺时针旋转）
             this.move=function (direction) {
                 var mymario=document.getElementById("mymario");
+
                 var top=mymario.style.top;
-                top=parseInt(top.substr(0,top.length-2));
+                top=parseInt(top.substr(0,top.length-2)); //substr(0,top.indexof("p"));
                 var left=mymario.style.left;
                 left=parseInt(left.substr(0,left.length-2));
                 switch (direction){
@@ -69,6 +70,11 @@
 
         //全局函数
         function marioMove(direction) {
+            //window.event可以判断用户是通过点击按钮还是通过按键来控制乌龟
+            if(window.event){
+                //获得用户按下键的code
+                key=direction.keyCode;
+            }
             switch (direction) {
                 case 0:
                     mario.move(direction);
@@ -88,7 +94,7 @@
     </script>
     <link rel="stylesheet" href="mario.css">
 </head>
-<body onmousedown="marioMove(event)">
+<body>
 <div class="mariodiv">
 <img  style="width: 50px; height: 50px; left: 0px; top: 0px; position: absolute" src="mario.jpg" id="mymario"/>
 <img  style="width: 50px; height: 50px; left: 250px; top: 300px; position: absolute" src="mogu.jpg">

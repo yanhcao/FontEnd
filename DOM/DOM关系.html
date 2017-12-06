@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM开山篇</title>
+    <script type="text/javascript">
+        function test() {
+            var mytable=document.getElementById("table");
+//            window.alert(mytable.constructor);
+//            mytable.deleteRow(0); //删除第一行
+            window.alert(mytable.rows[0].cells[0].innerText); //取出第一行第一列的值
+            mytable.rows[0].cells[0].innerText="键盘"; //修改第一行第一列的元素
+        }
+    </script>
+</head>
+<body>
+<table class="table" cellspacing="0" id="table">
+    <tr align="center" ><td colspan="3">游戏键盘</td></tr>
+    <!--onclick调用全局函数marioMove（）来响应button-->
+    <tr align="center"><td></td><td><input type="button" value="↑↑"></td><td></td></tr>
+    <tr align="center"><td><input type="button" value="←"></td><td></td>
+        <td><input type="button" value="→"></td></tr>
+    <tr align="center"><td></td><td><input type="button" value="↓↓"></td><td></td></tr>
+</table>
+<input type="button" value="删除表格的一行" onclick="test()"/>
+</body>
+</html>
