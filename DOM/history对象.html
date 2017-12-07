@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history对象</title>
+    <script>
+        //        location对象
+        function re_load() {
+            location.reload()
+            window.alert(location.href+"  "+location.hostname+"  "+location.port); //得到当前页面URL和主机名称、端口号
+        }
+        document.writeln(navigator.appName); //打印浏览器名称
+    </script>
+</head>
+<body>
+<!--back（）、go（-1）、length、forward()-->
+<a href="newWindow.html">跳转到newWindow.html页面</a>
+<input type="button" value="重新加载当前页面" onclick="re_load()">
+
+</body>
+</html>

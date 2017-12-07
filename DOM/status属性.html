@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>状态栏滚动</title>
+    <script>
+        function start() {
+            setInterval("hello()", 100);
+        }
+        var space_num=0;
+        var dir=1;
+        function hello() {
+            var space="";
+            space_num=space_num+1*dir;
+            if (space_num>50 || space_num<0) {
+                dir = (-1) * dir;
+            }
+            for(var i=0; i<space_num; i++){
+                space=space+" ";
+            }
+            window.status=sapce+"Hello";
+        }
+    </script>
+</head>
+<body onload="start">
+
+</body>
+</html>

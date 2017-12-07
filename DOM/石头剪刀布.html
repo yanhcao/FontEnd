@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜拳游戏</title>
+    <script>
+        function play(me, computer,count) {
+            this.me=me;
+            this.computer=computer;
+            this.count=count;
+        }
+        function result() {
+
+        }
+        var arr=new Array();
+        arr[0]=new play("石头", "石头", 1);
+    </script>
+</head>
+<body>
+<div  style="text-align: center; width:auto; line-height: 100%">
+    <table border="1" cellspacing="0">
+        <tr><td><span>我</span><br/><img src="bu.png" style="width: 145px" id="person"></td><td><b>VS</b></td>
+            <td><span>电脑</span><br/><img src="bu.png" style="width: 145px" id="com"></td></tr>
+        <tr><td colspan="3"><b>You Win!</b></td></tr>
+        <tr><td><span>我选择了</span><br/><img src="shitou.png" style="width: 145px"></td><td><span>choice</span></td>
+            <td>
+                <span>您选择出：</span>
+                <select name="" id="me_choice">
+                    <option>石头</option>
+                    <option>剪刀</option>
+                    <option>布</option>
+                </select><br/><br/>
+                <input type="button" value="想好了出拳"><br/><br/>
+                <input type="button" value="重新开始">
+            </td></tr>
+        <tr><td colspan="3"><input type="button" value="显示全部比赛结果"></td></tr>
+    </table>
+</div>
+</body>
+</html>

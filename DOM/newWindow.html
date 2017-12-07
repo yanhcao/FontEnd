@@ -12,10 +12,18 @@
         function $(id) {  //简化代码，采用$代替前面的获取id号
             return document.getElementById(id);
         }
+        function goback() {
+//            history.back();  //返回上一个页面
+            history.go(-1);  //有里面数字决定，看跳转到前面几个页面。-1为前一个页面
+            window.alert(history.length); //length可以显示历史浏览网页数目
+        }
     </script>
 </head>
 <body>
 我是新窗口<br/>
 <input type="text" value="" id="info"><input type="button" value="通知父窗口更换内容" onclick="test()">
+<br/>
+<br/>
+<a href="#" onclick="goback()">返回上一个页面</a>
 </body>
 </html>
