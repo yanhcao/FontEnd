@@ -3,19 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>history对象</title>
-    <script>
-        //        location对象
-        function re_load() {
-            location.reload()
-            window.alert(location.href+"  "+location.hostname+"  "+location.port); //得到当前页面URL和主机名称、端口号
-        }
-        document.writeln(navigator.appName); //打印浏览器名称
-    </script>
 </head>
 <body>
 <!--back（）、go（-1）、length、forward()-->
 <a href="newWindow.html">跳转到newWindow.html页面</a>
-<input type="button" value="重新加载当前页面" onclick="re_load()">
+<input type="button" value="重新加载当前页面" onclick="re_load()"/>
+<!--投票系统，只允许投一次票-->
+<!--<input type="button" value="投票按钮" id="but1"/><br/>-->
+请输入一个数：<input type="text" onkeypress="return check1(event)" id="num"/><br/>    <!--onkeyup当键按下时立刻执行-->
+<input type="button" onclick="check2()" value="提交"/><br/>
 
+<script type="text/javascript" language="JavaScript">
+    function $(id) {
+        document.getElementById(id);
+    }
+    //location对象
+    function re_load() {
+        location.reload();
+        window.alert(location.href+"  "+location.hostname+"  "+location.port); //得到当前页面URL和主机名称、端口号
+    }
+    //navigator对象
+    document.writeln(navigator.appName+"<br/>"); //打印浏览器名称
+    document.writeln(navigator.platform+"<br/>"); //打印操作系统名称
+    document.writeln(navigator.systemLanguage+"<br/>"); //打印系统语音
+    //screen对象
+    document.writeln(screen.width+"px"+"&nbsp&nbsp"+screen.height+"px"+"  "+screen.availWidth+"  "
+        +screen.availHeight); //打印目前屏非浏览器幕宽高,后一个是除去边框栏可用大小
+
+    //投票(有问题？？？？)
+    $("but1").addEventListener('click', vote);  //onclick
+//    $("but1").onclick=vote;
+    function vote() {
+        window.alert("Hello");
+        $("but1").removeEventListener('click', vote);
+    }
+    function check1(event) {
+        if(event.keyCode<48 || event.keyCode>57){   //event.keyCode对象属性返回按下键的Uncodei码，0到9对应48到57
+            window.alert("你输入的不是数字");
+//            window.event.returnValue=false; //使得输入不是数字的值不接收
+            return false; //该种方式需要上面返回return配对，上面的方式不需要
+        }
+    }
+</script>
 </body>
 </html>
