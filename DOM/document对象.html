@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document对象</title>
+    <script type="text/javascript" language="JavaScript">
+        function $(id) {
+            document.getElementById(id);
+        }
+//        1.getElementById()方法
+        function test1() {
+            var myhref=document.getElementById("a1"); //返回单个id控件
+            document.writeln(myhref.href); //myhref.href显示href里面的链接，myhref.innerText显示后面的内容baidu
+        }
+//        2.getElementsByName()方法
+        function test2() {
+            var hobbies=document.getElementsByName("hobby");//返回一个集合，具有长度信息
+            window.alert(hobbies.length); //此次得到的是整个的长度
+            //接下来寻找选中的个数
+            var arr=new Array();
+            var k=0;
+            for (var i=0; i<hobbies.length; i++){
+                //如何得知是否被选中，采用hobbies[i].checked,选中的话为true，未选中为false
+                if(hobbies[i].checked){
+                    arr[k++]=hobbies[i].value;  //从0开始走，每次存储一个，然后加一位
+                    window.alert(hobbies[i].value);
+                }
+            }
+            for(j=0;j<arr.length;j++){
+                document.writeln(arr[j]+"&nbsp&nbsp");
+            }
+        }
+        function test3() {
+            var myinput=document.getElementsByTagName("input"); //返回集合
+            window.alert(myinput.length);
+            for(var m=0; m<myinput.length; m++){
+                window.alert(myinput[m].value+"  ");
+//                document.write(myinput[m].value+"  "); //为何采用document只能显示一个？
+            }
+        }
+
+//        4.动态创建html元素（创建、添加、删除）函数
+        function test4() {
+            //创建节点
+            var myElement=document.createElement("a"); //括号中写想要创建的html元素标签，此为创建超链接
+            myElement.href="http://www.baidu.com"; //给a标签添加信息
+            myElement.innerText="链接到百度";
+            //添加节点
+            document.body.appendChild(myElement);
+            var myinput=document.createElement("input");
+            myinput.type="button";
+            myinput.value="我是个新创建的按钮";
+            myinput.style.position="relative";
+            myinput.style.top="50%";
+            myinput.style.left="10%";
+            document.getElementById("div1").appendChild(myinput);
+        }
+        function test5() {
+            var mytable=document.createElement("table");
+            mytable.cellSpacing="0";
+            mytable.style.margin="0 auto";
+            mytable.id="mytable";
+            for(var i=0; i<4; i++){
+                var row=mytable.insertRow(); //添加行
+                for(var j=0;j<3;j++){
+                    var cell=row.insertCell(); //添加列
+                    cell.style.height="50px";
+                    cell.style.width="200px";
+                    cell.style.textAlign="center";
+                    cell.innerHTML="这里是第"+i+"行"+",第"+j+"列";
+                }
+            }
+             document.getElementById('div1').appendChild(mytable); //将表格放入id="table"的div中
+            mytable.setAttribute('border','1'); //设置表格框线
+        }
+        //删除一个table
+        function test6() {
+//            document.getElementById("div1").removeChild(document.getElementById("mytable"));//删除元素得知道父元素，从父元素开始删除
+            document.body.removeChild(document.getElementById("a1")); //删掉本来元素，多个的话先删第一个
+            window.alert(document.getElementById("mytable").parentNode.id); //取出table的父元素的id,弹出div1
+            //显示一种灵活删除的方式
+            document.getElementById('mytable').parentNode.removeChild(document.getElementById('mytable'));//不能采用$
+        }
+    </script>
+</head>
+<body>
+<!--1.使用同一id时，采用getElenmentById()只能获取 第一个id对应的html控件-->
+<a id="a1" href="http://www.baidu.com">baidu</a>
+<a id="a1" href="http://www.sina.com">sina</a>
+<input type="button" value="test1" onclick="test1()"/><br/>
+<!--2.复选框时，需要采用同样的js代码，就不能用getElenmentById()，得用getElenmentByName()-->
+<input type="checkbox" name="hobby" value="足球">足球
+<input type="checkbox" name="hobby" value="篮球">篮球
+<input type="checkbox" name="hobby" value="排球">排球
+<input type="button" value="test2" onclick="test2()"/><br/>
+<!--3.通过getElenmentByTagName()获取input标签在html中出现的个数-->
+<input type="button" value="test3" onclick="test3()"/><br/>
+
+<!--4.动态创建html元素（创建、添加、删除）-->
+<input type="button" value="动态创建html元素" onclick="test4()"/>
+<input type="button" value="动态创建table表格" onclick="test5()"/>
+<div style="width: 700px; height: 300px; border: 1px solid red" id="div1"></div>
+<input type="button" value="动态删除table表格" onclick="test6()"/>
+<script>
+
+</script>
+</body>
+</html>
