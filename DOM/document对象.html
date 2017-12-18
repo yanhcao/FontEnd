@@ -5,11 +5,11 @@
     <title>document对象</title>
     <script type="text/javascript" language="JavaScript">
         function $(id) {
-            document.getElementById(id);
+            return document.getElementById(id);
         }
 //        1.getElementById()方法
         function test1() {
-            var myhref=document.getElementById("a1"); //返回单个id控件
+            var myhref=$("a1"); //返回单个id控件
             document.writeln(myhref.href); //myhref.href显示href里面的链接，myhref.innerText显示后面的内容baidu
         }
 //        2.getElementsByName()方法

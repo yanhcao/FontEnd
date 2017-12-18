@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM对象加强篇</title>
+    <script type="text/javascript" language="JavaScript">
+        document.fgColor="white";
+        document.bgColor="black";
+        window.alert(document.title);
+        function $(id) {
+            return document.getElementById(id);
+        }
+        function test1() {
+            var mymario=$("mymario");
+            window.alert(mymario.nodeName+"  "+mymario.nodeType+"  "+mymario.childNodes.length); //nodeName打印div，nodeType打印1
+            // 节点类型与值：元素-1、属性-2、文本-3、注释-8、文档-9,childNodes.length子节点的长度,将默认换行也算进去
+            window.alert(mymario.nextSibling+" "+mymario.previousSibling+"  "+mymario.parentNode);//下一个节点和前一个节点
+        }
+        function test2() {
+            $("myspan").innerText="<a href='newWindow.html'>到新网页innerText</a>"; //新加的innerText只会当作文本对待
+            $("myspan").innerHTML="<a href='http://www.baidu.com'>innerHTML去百度</a>"; //新加的innerHTML会将其当作html元素对待
+        }
+    </script>
+</head>
+<body>
+<table border="1" cellspacing="0">
+    <tr><td>&nbsp</td><td><input type="button" value="向上走" onclick="move(this)"/></td><td>&nbsp</td></tr>
+    <tr><td><input type="button" value="向左走" onclick="move(this)"/></td><td>&nbsp</td>
+        <td><input type="button" value="向右走" onclick="move(this)"/></td></tr>
+    <tr><td>&nbsp</td><td><input type="button" value="向下走" onclick="move(this)"/></td><td>&nbsp</td></tr>
+</table>
+<div style="position: absolute; top: 200px; left: 0px" id="mymario">
+    <img src="mario.jpg" style="width: 50px; height: 50px">
+</div>
+<div style="position: absolute; top: 150px; left: 100px" id="mogu">
+    <img src="mogu.jpg" style="width: 50px; height: 50px">
+</div>
+<input type="button" value="test1" onclick="test1()">
+测试背景与前景色<br/><br/>
+<span id="myspan"></span>
+<input type="button" value="测试" onclick="test2()">
+</body>
+</html>

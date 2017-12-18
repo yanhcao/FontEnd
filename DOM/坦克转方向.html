@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转方向的坦克</title>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        function change(obj) {
+            var myimg=$("imgdiv");
+            if(obj.value=="上"){
+                $("imgdiv").style.backgroundPositionY=0+'px';
+            }else if(obj.value=="右"){
+                $("imgdiv").style.backgroundPositionY=150+'px';
+            }else if(obj.value=="下"){
+                $("imgdiv").style.backgroundPositionY=100+'px';
+            }else if(obj.value=="左"){
+                $("imgdiv").style.backgroundPositionY=50+'px';
+            }
+        }
+    </script>
+</head>
+<body>
+<!--方法1.修改src图片。但是每次向服务器发请求耗时-->
+<!--方法2.一次加载背景的图不同部分background-position-y和backgroundPositionY-->
+<div id="imgdiv" style="background-image: url('tanke.png'); background-position-y:50px; width: 50px; height: 50px "></div>
+<table border="1" cellspacing="0">
+    <tr><td>&nbsp</td><td><input type="button" value="上" onclick="change(this)"/></td><td>&nbsp</td></tr>
+    <tr><td><input type="button" value="左" onclick="change(this)"/></td><td>&nbsp</td>
+        <td><input type="button" value="右" onclick="change(this)"/></td></tr>
+    <tr><td>&nbsp</td><td><input type="button" value="下" onclick="change(this)"/></td><td>&nbsp</td></tr>
+</table>
+</body>
+</html>

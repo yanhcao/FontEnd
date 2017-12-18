@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小球撞墙壁</title>
+    <script type="text/javascript" language="JavaScript">
+        function $(id) {
+            return document.getElementById(id);
+        }
+        //定义全局变量
+//        document.getElementsByTagName('body').style.height=window.innerHeight+'px'; //为何不可以？？？
+        var directX=1; //x轴方向
+        var directY=1; //y轴方向
+        var sunX=0; //太阳坐标x
+        var sunY=0; //太阳坐标y
+        function sunMove() {
+            sunX+=directX;
+            sunY+=directY;
+            //修改div的top与left
+            $('sundiv').style.top=sunY+'px';
+            $('sundiv').style.left=sunX+'px';
+            //判断什么时候转变方向
+            //offsetWidth可以返回当前对象时间的宽度
+//            window.alert(window.innerHeight); //浏览器内容窗口大小
+//            window.alert(document.body.clientWidth+"  "+document.body.clientHeight);
+            if($('sundiv').offsetWidth+sunX >= document.body.clientWidth || sunX<=0){
+                directX=-directX;
+            }
+            if($('sundiv').offsetHeight+sunY >= document.body.clientHeight || sunY<=0){
+                directY=-directY;
+            }
+        }
+        setInterval('sunMove()', 10);
+    </script>
+</head>
+<body background="ship.jpg" style="width: 100%; height: 769px">  <!--style="width: 100%; height: 769px"-->
+<div id="sundiv" style="position: absolute">
+    <img src="sun.png" style="width: 50px; height: 50px"/>
+</div>
+</body>
+</html>
