@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜狐1</title>
+    <script>
+//        window.alert(window.innerWidth);
+function $(id) {
+    return document.getElementById(id);
+}
+        function change(val) {
+            if(val=='zs'){
+                $('zs').style.visibility='visible';  //display:none
+                $('rz').style.visibility='hidden';
+                $('cg').style.visibility='hidden';
+                $('li1').style.backgroundColor='yellow';
+                $('li2').style.backgroundColor='pink';
+                $('li3').style.backgroundColor='pink';
+            }else if (val=='rz'){
+                $('zs').style.visibility='hidden';
+                $('rz').style.visibility='visible';
+                $('cg').style.visibility='hidden';
+                $('li2').style.backgroundColor='yellow';
+                $('li1').style.backgroundColor='pink';
+                $('li3').style.backgroundColor='pink';
+            }else if(val=='cg'){
+                $('zs').style.visibility='hidden';
+                $('rz').style.visibility='hidden';
+                $('cg').style.visibility='visible';
+                $('li3').style.backgroundColor='yellow';
+                $('li1').style.backgroundColor='pink';
+                $('li2').style.backgroundColor='pink';
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="仿搜狐布局1.css">
+</head>
+<body>
+<div class="s1">
+    用户名:<input type="text" name="usrname"/>
+    密码：<input type="password" name="pwd">
+</div>
+<div class="s2"><a href="#">设置为首页</a></div>
+<div class="s3">设置超链接</div>
+<hr/>
+<div class="s4"><img src="souhu.png"/></div>
+<div class="s5">导航条</div>
+<hr/>
+<div class="s6">
+    <div style="position: relative; width: 15%;height: 200px;float: left;text-align: center">
+    <ul style="list-style-type: none; margin: 0; padding: 0">
+        <li onmousemove="change('zs')" id='li1' style="padding: 0;margin-top: 30px;">招生</li><br/>
+        <li onmousemove="change('rz')" id="li2" style="margin: 0; padding: 0;">热招</li><br/>
+        <li onmousemove="change('cg')" id="li3" style="margin: 0; padding: 0;">出国</li>
+    </ul>
+        <div id="zs" style="position:relative;top: -150px;left: 120%; width: 500%;height: 160px;line-height: 20px">
+            <a href="#">黄冈中学开学季</a>
+            <a href="#">黄冈中学开学季</a>
+            <a href="#">黄冈中学开学季</a>
+            <a href="#">黄冈中学开学季</a>
+            <a href="#">黄冈中学开学季</a>
+            <a href="#">黄冈中学开学季</a>
+            <a href="#">黄冈中学开学季</a>
+            <a href="#">黄冈中学开学季</a>
+            <a href="#">黄冈中学开学季</a>
+        </div>
+        <div id="rz" onmousemove="change('rz')" style="position:relative;top: -310px;left: 120%; width: 500%;height: 160px;line-height: 20px; visibility: hidden">
+            <a href="#">同游开启旅游朝</a>
+            <a href="#">同游开启旅游朝</a>
+            <a href="#">同游开启旅游朝</a>
+            <a href="#">同游开启旅游朝</a>
+            <a href="#">同游开启旅游朝</a>
+            <a href="#">同游开启旅游朝</a>
+            <a href="#">同游开启旅游朝</a>
+            <a href="#">同游开启旅游朝</a>
+            <a href="#">同游开启旅游朝</a>
+        </div>
+        <div id="cg" onmousemove="change('cg')" style="position:relative;top: -470px;left: 120%; width: 500%;height: 160px;line-height: 20px;visibility: hidden">
+            <a href="#">美国留学开启啦</a>
+            <a href="#">美国留学开启啦</a>
+            <a href="#">美国留学开启啦</a>
+            <a href="#">美国留学开启啦</a>
+            <a href="#">美国留学开启啦</a>
+            <a href="#">美国留学开启啦</a>
+            <a href="#">美国留学开启啦</a>
+            <a href="#">美国留学开启啦</a>
+            <a href="#">美国留学开启啦</a>
+        </div>
+
+</div>
+</div>
+<div class="s7">广告2</div>
+<div class="s8">房地产广告</div>
+<div class="s9"><img src="duilian3.jpg"></div>
+</body>
+</html>

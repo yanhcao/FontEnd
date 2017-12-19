@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>树状展开与关闭</title>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        function test() {
+            if($('test').innerText=='-'){
+                $('mylist').style.display='none';
+                $('test').innerText='+';
+            }else {
+                $('mylist').style.display='block';
+                $('test').innerText='-';
+            }
+        }
+    </script>
+</head>
+<body>
+<p><span id="test" onclick="return test()">-</span>myFamily</p>
+<ul id="mylist">
+    <li>爸爸</li>
+    <li>妈妈</li>
+    <li>显斌</li>
+</ul>
+</body>
+</html>
