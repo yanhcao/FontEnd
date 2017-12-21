@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select选择并提交显示内容</title>
+</head>
+<body>
+<!--当发现用户一直修改时，就相应onchange事件-->
+<select id="myCourse" onchange="getCourse()">
+    <option value="0" selected>--请选择一门课--</option>
+</select>
+<textarea id="text" cols="30" rows="10"></textarea>
+
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    //动态添加第一门课
+    var myoption=document.createElement('OPTION');
+    myoption.value="java";
+    myoption.text='java'; //option里面的文本显示，选项中的显示
+    $('myCourse').add(myoption);
+
+    //动态添加第2门课
+    var myoption=document.createElement('OPTION');
+    myoption.value="C++";
+    myoption.text='C++'; //option里面的文本显示，选项中的显示
+    $('myCourse').add(myoption);
+    //动态添加第3门课
+    var myoption=document.createElement('OPTION');
+    myoption.value="C#";
+    myoption.text='C#'; //option里面的文本显示，选项中的显示
+    $('myCourse').add(myoption);
+
+    //显示选项在textarea中
+    function getCourse() {
+        $('text').value+="你选择了1："+$('myCourse').value+"\r\n";
+        //在textarea中换行必须是\r\n
+    }
+</script>
+</body>
+</html>

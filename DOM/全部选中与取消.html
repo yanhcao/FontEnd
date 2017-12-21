@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全部选中与取消</title>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        var mybuy = document.getElementsByName('buy');
+        function gouwu(obj) {
+            var total = 0;
+            //遍历所有的checkbox来看是否选中，然后计算价格
+            for (var i = 0; i < mybuy.length; i++) {
+                if (mybuy[i].checked) {
+                    total += parseInt(mybuy[i].value);
+                }
+            }
+            $('value').innerText = total + '元';
+        }
+
+        function selectall(obj) {
+            if(obj.innerText=="全选"){
+                for(var i=0; i<mybuy.length; i++){
+                    mybuy[i].checked=true;
+                }
+            }else{
+                for(var i=0; i<mybuy.length; i++){
+                    mybuy[i].checked=false;
+                }
+            }
+        }
+
+        function selectall2(obj) {
+            if($('select2').checked){
+                for(var i=0; i<mybuy.length; i++){
+                    mybuy[i].checked=true;
+                }
+            }else{
+                for(var i=0; i<mybuy.length; i++){
+                    mybuy[i].checked=false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>我的购物车</h1><br/>
+<input type="checkbox" name="buy" id="pg" onclick="gouwu(this)" value="10"/>苹果  10元<br/>
+<input type="checkbox" name="buy" id="xj" onclick="gouwu(this)" value="5"/>香蕉  5元<br/>
+<input type="checkbox" name="buy" id="xg" onclick="gouwu(this)" value="20"/>西瓜  20元<br/>
+<input type="checkbox" name="buy" id="pt" onclick="gouwu(this)" value="30"/>葡萄  30元<br/>
+<input type="checkbox" name="buy" id="gy" onclick="gouwu(this)" value="50"/>桂圆  50元<br/>
+总价格是： <span id="value">0元</span><br/>
+<a href="#" onclick="selectall(this); gouwu(this)">全选</a>
+<a href="#" onclick="selectall(this); gouwu(this)">取消</a><br/>
+<input type="checkbox" id="select2" onclick="selectall2(this); gouwu(this)"/>是否全选
+</body>
+</html>
