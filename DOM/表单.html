@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <script>
+        function test() {
+            var allforms=document.forms; //可以找出所有的html中的form表单，然后放在一个集合中
+//            window.alert(allforms.length);
+            //可以通过allforms访问指定某个表单
+            window.alert(allforms[0].username.value);  //allforms[0]==allforms.item(0) 两种取法
+            window.alert(allforms.item(1).hobby1.value);
+        }
+    </script>
+</head>
+<body>
+<h1>个人信息</h1>
+<form action="">
+    U: <input type="text" name="username"/><br/>
+    P: <input type="password" name="pwd"/><br/>
+    <input type="submit" value="提交"/>
+</form>
+<h1>兴趣爱好</h1>
+<form action="">
+    爱好1: <input type="text" name="hobby1"/><br/>
+    爱好2: <input type="text" name="hobby2"/><br/>
+    <input type="submit" value="提交"/>
+</form>
+<br/>
+<input type="button" value="test" onclick="test()"/>
+
+</body>
+</html>

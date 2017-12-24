@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        var myform=document.forms;
+        function test() {
+            $('user').innerText="";
+            $('pwd').innerText="";
+            $('pwd2').innerText="";
+
+//            myform[0].username获取用户名的输入值
+            if(myform[0].username.value.length<4 || myform[0].username.value.length>6) {
+                $('user').innerText='用户名长度必须是4-6位'; //或者采用填写style.display
+                return false;
+            }
+            if(myform[0].pwd.value.length<=3){
+                $('pwd').innerText='密码不能少于3位';
+                return false;
+            }
+            if (myform[0].pwd2.value!=myform[0].pwd.value){
+                $('pwd2').innerText='两次输入要一致';
+                return false;
+            }
+        }
+        //img对象
+function check_true() {
+    $('abb').title='ok';
+}
+function check_false() {
+    $('abb').title='no ok'; //window.alert('no ok');
+}
+
+//all对象测试.可以选中DOM所有节点
+        function abc() {
+            var myall=document.all;
+            for(var i=0; i<myall.length; i++){
+                window.alert(myall[i].nodeType+'  '+myall[i].nodeName); //有些标签没有name属性,所以以节点形式取,节点name取出标签名称
+            }
+        }
+    </script>
+</head>
+<body>
+<!--用户名长度4-10位，密码不得少于3位，两次密码一致-->
+<h1>用户注册</h1>
+<!--<form action="" onsubmit="test()">-->  <!--提交也可以在form里面写 onsubmit=‘return test()’-->
+<form action="">
+    <table border="0" style="text-align: justify">
+        <tr><td>用户名：</td><td><input type="text" name="username"/><span id="user"></span></td></tr>
+        <tr><td>密码：</td><td><input type="password" name="pwd"/><span id="pwd"></span></td></tr>
+        <tr><td>确认密码：</td><td><input type="password" name="pwd2"/><span id="pwd2"></span></td></tr>
+        <tr><td>年龄：</td><td><input type="text" name="age"/></td></tr>
+        <tr><td>电子邮件：</td><td><input type="text" name="email"/></td></tr>
+        <tr><td>电话号码：</td><td><input type="text" name="tel"/></td></tr>
+    </table>
+    <br/>
+    <input type="submit" value="注册" onclick="return test()"/> <input type="reset" name="重置"/><br/>
+
+    <!--img对象有可以响应这两个事件，onload是加载成功后触发的事件，onerror是加载失败后触发的事件-->
+    <abbr id="abb" title=""><img src="a.png" onload="check_true()" onerror="check_false()"/></abbr>
+    <!--abbr对文本进行标注说明-->
+
+    <!--all对象测试-->
+    <input type="button" value="test_all" onclick="abc()"/>
+</form>
+</body>
+</html>
