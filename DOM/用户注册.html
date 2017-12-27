@@ -14,14 +14,17 @@
             $('pwd2').innerText="";
 
 //            myform[0].username获取用户名的输入值
+//            校验输入用户名是否满足要求
             if(myform[0].username.value.length<4 || myform[0].username.value.length>6) {
                 $('user').innerText='用户名长度必须是4-6位'; //或者采用填写style.display
                 return false;
             }
+//            校验输入密码是否满足要求
             if(myform[0].pwd.value.length<=3){
                 $('pwd').innerText='密码不能少于3位';
                 return false;
             }
+//            校验两次输入密码是否一致
             if (myform[0].pwd2.value!=myform[0].pwd.value){
                 $('pwd2').innerText='两次输入要一致';
                 return false;

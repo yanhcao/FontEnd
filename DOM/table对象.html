@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table对象</title>
+
+</head>
+<body>
+<table id="mytab" border="1" cellspacing="0">
+    <tr><td>排名</td><td>姓名</td><td>绰号</td><td>删除该英雄</td><td>修改该英雄</td></tr>
+    <tr><td>1</td><td>宋江</td><td>及时雨</td><td><a href="#" onclick="del(this)">删除</a></td>
+        <td><a href="#" onclick="modify(this)">修改</a></td></tr>
+    <tr><td>2</td><td>卢俊义</td><td>玉麒麟</td><td><a href="#" onclick="del(this)">删除</a></td>
+    <td><a href="#" onclick="modify(this)">修改</a></td></tr>
+    <tr><td>3</td><td>公孙胜</td><td>入云龙</td><td><a href="#" onclick="del(this)">删除</a></td>
+        <td><a href="#" onclick="modify(this)">修改</a></td></tr>
+</table>
+排名 <input type="text" id="num"/><br>
+姓名 <input type="text" id="name"/><br>
+绰号 <input type="text" id="nick"/><br>
+<input type="button" value="添加好汉" onclick=" return addObj()"/>
+
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    var mytab=$('mytab');
+//    添加信息
+    function addObj() {
+//        遍历整个表格看编号是否重复
+        for (var i = 1; i < mytab.rows.length-1; i++) {
+            var eachrow = mytab.rows[i];
+            if (eachrow.cells[0].innerText == $('num').value) {
+                window.alert("输入编号数字重复，请重新输入");
+                return; //编号重复直接返回，不继续走，也不提交
+            }
+//            window.alert(i);
+//            window.alert(mytab.rows[i].cells[0].innerText + "    " + mytab.rows[i + 1].cells[0].innerText);
+//            window.alert($('num').value);
+            if (parseInt(mytab.rows[i].cells[0].innerText) < parseInt($('num').value)){
+                if (parseInt(mytab.rows[i+1].cells[0].innerText)>parseInt($('num').value)){
+                    var myrow = mytab.insertRow(i + 1);
+                    addContent(myrow);
+                }
+            }
+        }
+        var myrow = mytab.insertRow(mytab.rows.length);
+        addContent(myrow);
+    }
+    function addContent(myrow) {
+        var num=$('num').value;
+        myrow.insertCell(0).innerText = $('num').value;
+        myrow.insertCell(1).innerText = $('name').value;
+        myrow.insertCell(2).innerText = $('nick').value;
+        myrow.insertCell(3).innerHTML = "<a href='#' onclick='del(this)'>删除</a>";
+        myrow.insertCell(4).innerHTML = "<a href='#' onclick='modify(this)'>修改</a>";
+    }
+    function del(obj) {
+        var i=obj.parentNode.parentNode.rowIndex; //取出父元素的行号
+        mytab.deleteRow(i);
+    }
+    function modify(obj) {
+        var r=obj.parentNode.parentNode.rowIndex;
+        var con1=mytab.rows[r].cells[1].innerText;
+        var con2=mytab.rows[r].cells[2].innerText;
+        mytab.rows[r].cells[1].innerHTML="<input type='text' value='' id='k1'>";
+        $('k1').value=con1;
+        mytab.rows[r].cells[2].innerHTML="<input type='text' value='' id='k2'>";
+        $('k2').value=con2;
+        mytab.rows[r].cells[4].innerHTML="<input type='button' value='修改' onclick='xiugai()'>";
+        function xiugai() {
+            mytab.rows[r].cells[1].innerHTML='';
+            mytab.rows[r].cells[2].innerHTML='';
+            mytab.rows[r].cells[1].innerText=$('k1').value;
+            mytab.rows[r].cells[2].innerText=$('k2').value;
+            mytab.rows[r].cells[4].innerHTML="<a href='#' onclick='modify(this)'>修改</a>";
+        }
+    }
+
+</script>
+</body>
+</html>
