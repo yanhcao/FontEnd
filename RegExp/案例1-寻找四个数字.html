@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>寻找四个数字在一起的子串</title>
+    <script type="text/javascript" language="JavaScript">
+        function $(id) {
+            return document.getElementById(id);
+        }
+        function test_exec() {
+            var con=$('mytext').value; //textarea取值采用value，而非innerText
+            //正则表达式寻找四个连续的数字
+            var myReg=/(\d){4}/gi;
+//            var myReg=/(^a.*b$)/gi;  //   /正则表达式/gi
+//            var myReg=/(^[a-z]+$)/gi;
+            while(res=myReg.exec(con)){  //res是检索出来的数组，一个结果是一个数组
+                window.alert("找到"+res[0]); // res[0]就是对应找到的元素
+            }
+        }
+        function test_test() {
+            var con=$('mytext').value;
+            var myReg=/(\d){4}/gi;
+            if (myReg.test(con)){
+                window.alert('四个数字存在');
+            }else {
+                window.alert('四个数字不存在');
+            }
+        }
+        //两个string方法：search、match
+        var str='hello w3school';
+        document.writeln(str.search(/w3/)); //用string的方法search查找w3，用//包起来,看作是正则表达式
+        //打印出w3出现的位置下标
+
+        //match方法
+        function test_match() {
+            var con=$('mytext').value;
+            var myReg=/abc/gi; //查找abc
+            res=con.match(myReg);
+            for(var i=0; i<res.length; i++){
+                window.alert(i+'  '+res[0]);
+            }
+        }
+        //利用replace函数  replace(find_value, change_value)
+        function test_replace() {
+            var con=$('mytext').value;
+            var myReg=/(\d){4}/gi;
+            var newcon=con.replace(myReg,'这里原来有4个数字');
+            $('mytext').value=newcon;
+        }
+        //以下3个都是静态属性，得用RegExp.
+        //index(匹配字符的下标), leftContent(找到匹配内容的左边), rightContent(找到匹配内容的右边)
+        function test5() {
+            var con=$('mytext').value;
+            var myReg=/(\d){4}/gi;
+            while(res=myReg.exec(con)){
+                window.alert(RegExp.index+'  '+RegExp.leftContext+'  '+RegExp.rightContext); //index是静态属性，所以只能从RegExp获取，不能用myReg
+            }
+        }
+        //找出四个数字，并且满足1221格式
+        function test6() {
+            var con=$('mytext').value;
+            var myReg=/(\d)(\d)\2\1/gi; //\2\1表示反向捕获引用第二个，第一个子表达式, (\d)(\d)表示第一个和第二个子表达式
+            //  (\d)\1(\d)\2  ----AABB格式
+            while(res=myReg.exec(con)){
+                window.alert(res[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+<textarea id="mytext" cols="30" rows="10"></textarea>
+<input type="button" value="检索1" onclick="test_exec()"/>
+<input type="button" value="检索2" onclick="test_test()"/>
+<input type="button" value="检索3" onclick="test_match()"/>
+<input type="button" value="替换4" onclick="test_replace()"/>
+<input type="button" value="查找5" onclick="test5()"/>
+<input type="button" value="查找6-1221style" onclick="test6()"/>
+</body>
+</html>

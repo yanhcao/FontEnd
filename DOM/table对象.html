@@ -7,13 +7,25 @@
 </head>
 <body>
 <table id="mytab" border="1" cellspacing="0">
-    <tr><td>排名</td><td>姓名</td><td>绰号</td><td>删除该英雄</td><td>修改该英雄</td></tr>
-    <tr><td>1</td><td>宋江</td><td>及时雨</td><td><a href="#" onclick="del(this)">删除</a></td>
-        <td><a href="#" onclick="modify(this)">修改</a></td></tr>
-    <tr><td>2</td><td>卢俊义</td><td>玉麒麟</td><td><a href="#" onclick="del(this)">删除</a></td>
-    <td><a href="#" onclick="modify(this)">修改</a></td></tr>
-    <tr><td>3</td><td>公孙胜</td><td>入云龙</td><td><a href="#" onclick="del(this)">删除</a></td>
-        <td><a href="#" onclick="modify(this)">修改</a></td></tr>
+    <tr>
+        <td>排名</td><td>姓名</td><td>绰号</td>
+        <td>删除该英雄</td><td>修改该英雄</td>
+    </tr>
+    <tr>
+        <td>1</td><td>宋江</td><td>及时雨</td>
+        <td><a href="#" onclick="del(this)">删除</a></td>
+        <td><a href="#" onclick="modify(this)">修改</a></td>
+    </tr>
+    <tr>
+        <td>2</td><td>卢俊义</td><td>玉麒麟</td>
+        <td><a href="#" onclick="del(this)">删除</a></td>
+        <td><a href="#" onclick="modify(this)">修改</a></td>
+    </tr>
+    <tr>
+        <td>3</td><td>公孙胜</td><td>入云龙</td>
+        <td><a href="#" onclick="del(this)">删除</a></td>
+        <td><a href="#" onclick="modify(this)">修改</a></td>
+    </tr>
 </table>
 排名 <input type="text" id="num"/><br>
 姓名 <input type="text" id="name"/><br>
@@ -48,7 +60,6 @@
         addContent(myrow);
     }
     function addContent(myrow) {
-        var num=$('num').value;
         myrow.insertCell(0).innerText = $('num').value;
         myrow.insertCell(1).innerText = $('name').value;
         myrow.insertCell(2).innerText = $('nick').value;
@@ -67,14 +78,21 @@
         $('k1').value=con1;
         mytab.rows[r].cells[2].innerHTML="<input type='text' value='' id='k2'>";
         $('k2').value=con2;
-        mytab.rows[r].cells[4].innerHTML="<input type='button' value='修改' onclick='xiugai()'>";
-        function xiugai() {
-            mytab.rows[r].cells[1].innerHTML='';
-            mytab.rows[r].cells[2].innerHTML='';
-            mytab.rows[r].cells[1].innerText=$('k1').value;
-            mytab.rows[r].cells[2].innerText=$('k2').value;
-            mytab.rows[r].cells[4].innerHTML="<a href='#' onclick='modify(this)'>修改</a>";
-        }
+
+        mytab.rows[r].cells[4].innerHTML="<input type='button' value='修改' onclick='change(this)'>";
+
+        //如何修改？？？？为什么change（r）传不进去
+
+    }
+    function change(obj) {
+        console.log(obj.parentNode.parentNode.rowIndex); //获取r值的方法
+//        var r= obj.parentNode.parentNode.childNodes[0].innerHTML;
+        var r= obj.parentNode.parentNode.rowIndex;
+        var newcon1=$('k1').value;
+        var newcon2=$('k2').value;
+        mytab.rows[r].cells[1].innerHTML=newcon1;
+        mytab.rows[r].cells[2].innerHTML=newcon2;
+        mytab.rows[r].cells[4].innerHTML="<a href='#' onclick='modify(this)'>修改</a>";
     }
 
 </script>
