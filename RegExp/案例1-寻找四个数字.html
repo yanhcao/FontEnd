@@ -59,21 +59,42 @@
         //找出四个数字，并且满足1221格式
         function test6() {
             var con=$('mytext').value;
-            var myReg=/(\d)(\d)\2\1/gi; //\2\1表示反向捕获引用第二个，第一个子表达式, (\d)(\d)表示第一个和第二个子表达式
+            var myReg=/(\d)(\d)\2\1/gi; //ABBA\2\1表示反向捕获引用第二个，第一个子表达式, (\d)(\d)表示第一个和第二个子表达式
             //  (\d)\1(\d)\2  ----AABB格式
             while(res=myReg.exec(con)){
                 window.alert(res[0]);
             }
         }
+        function test7() {
+            var con=$('mytext').value;
+            var myReg=/[0-9]+(\.)?[0-9]+/gi;
+            if(myReg.test(con)){
+                window.alert("是一个数字");
+            }else {
+                window.alert("不是一个数字");
+            }
+        }
+        function test8() {
+            var con=$('mytext').value;
+            var myReg=/[0-9]/gi;
+            if(myReg.test(con)){
+                window.alert("是一个数字");
+            }else {
+                window.alert("不是一个数字");
+            }
+        }
     </script>
 </head>
 <body>
-<textarea id="mytext" cols="30" rows="10"></textarea>
+<textarea id="mytext" cols="30" rows="10"></textarea><br/>
 <input type="button" value="检索1" onclick="test_exec()"/>
 <input type="button" value="检索2" onclick="test_test()"/>
 <input type="button" value="检索3" onclick="test_match()"/>
 <input type="button" value="替换4" onclick="test_replace()"/>
 <input type="button" value="查找5" onclick="test5()"/>
 <input type="button" value="查找6-1221style" onclick="test6()"/>
+<input type="button" value="验证是否是一个数字" onclick="test7()"/>
+<!--验证一个url是否正确-->
+<input type="button" value="验证url" onclick="test8()"/>
 </body>
 </html>
