@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快捷键设置class属性值</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <style type="text/css">
+        .apple{width: 200px; height: 200px; background-color: pink}
+        .pear{color: blue}
+        .banana{font-size: 30px}
+    </style>
+    <script>
+        function f1() {
+//            $('div').attr('class','apple');// 等价于下面, attr在修改同一个属性时，只采用最后一个，即后者覆盖前者
+//            $('div').attr('class','pear');
+
+            //采用addClass可以追加多个class值
+            $('div').addClass('apple'); //操作class，不用加.
+            $('div').addClass('pear');
+            $('div').addClass('banana');
+        }
+        function f2() {
+            //删除pear，留下apple和banana
+            $('div').removeClass('pear');
+        }
+        function f3() {
+            $('div').toggleClass('pear');
+        }
+    </script>
+</head>
+<body>
+<h1>class属性值快捷操作</h1>
+<div>Today we are learning jQuery!</div>
+<input type="button" value="设置" onclick="f1()">
+<input type="button" value="删除" onclick="f2()">
+<input type="button" value="开关删除添加" onclick="f3()">
+</body>
+</html>

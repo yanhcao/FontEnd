@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery属性操作</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        function f1() {
+            var a=$('input:last').attr('type');  //text and button
+            console.log(a);
+            console.log($('input:first').attr('class'));  //aa
+            console.log($('input:first').attr('name'));  //user
+            console.log($('input:first').attr('id'));  //usr
+            console.log($('input:first').attr('value'));  //yyhh
+            console.log($('input:first').attr('address'));  //xian 自定义属性也可以获取
+        }
+        function f2() {
+            $('input:first').attr('value', 'caoyanhui');
+            $('input:first').attr('class', 'bb');
+//            $('input:first').attr('type', 'radio');  //jquery禁止修改type属性,但是可以修改
+//            document.getElementById('usr').type='checkbox';  //js底层在有的浏览器可以修改
+        }
+        function f3() {
+            //除了type其余属性都可以修改删除
+            $('input:first').removeAttr('class');
+        }
+//        json
+        function f4() {
+            //一次性修改多个属性，将f2中的两个属性同时修改
+            var jn={class: 'bb', value: 'yanhui'};  //多个属性封装成一个json对象
+            $('input:first').attr(jn);
+        }
+        function f5() {
+            //通过函数执行后return的返回值对属性进行修改
+            $('input:first').attr('value', function () {
+                //xxxxx
+                return 34+78;
+            })
+        }
+    </script>
+</head>
+<body>
+<h2>属性操作</h2>
+<input type="text" class="aa" id="usr" name="user" value="yyhh" address="xian"/><br>
+<input type="button" value="触发" onclick="f1()"/>
+<input type="button" value="设置" onclick="f2()"/>
+<input type="button" value="删除属性" onclick="f3()"/>
+<!--json-->
+<input type="button" value="批量修改属性" onclick="f4()"/>
+<br>
+<!--函数返回值修改属性-->
+<input type="button" value="函数返回值修改属性" onclick="f5()"/>
+</body>
+</html>

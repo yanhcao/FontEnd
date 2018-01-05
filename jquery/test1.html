@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery使用1选择器</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        function f0() {
+            //修改h1标题颜色两种方式
+            //纯js
+//            document.getElementsByTagName('h1')[0].style.color='red';
+            //jquery: 对象.css方法（参数1， 参数2）
+            $('h1').css('color','blue');
+
+            //ajax请求
+            $.get('./1.php', function (msg) {
+                window.alert(msg);
+            });
+        }
+//        1.基本选择器：id、tag、class、通配符选择器、联合选择器
+        function f1() {
+//            //$('#id')  css(样式名称，样式值)    相当于#email{}
+//            $('#email').css('color', 'blue');
+//            //$(标签名称)   相当于h1{}  input{}
+//            $('h1').css('background-color','pink');
+//            $('input').css('width', '200px');
+//            //$(.class属性值)  相当于.apple{}
+//            $('.apple').css('background-color', 'lightgreen');
+//            //$('*')通配符选择器----（获得页面所有节点）  相当于*{margin:0; padding:0;}
+//            $('*').css('font-size', '30px');
+            //$('s1,s2,s3') s代表selector选择器  联合选择器,将符合s1，s2或者s3的节点都找到  相当于h1,#user, .apple{}
+            $('h1, #user, .apple').css('background-color', 'lightblue');
+        }
+        function f2() {
+            // $(s1 s2)派生选择器
+//            $('div span').css('color', 'blue');   //刘备、阿斗、关羽
+            // $(s1>s2)直接子元素选择器
+//            $('div>span').css('color', 'red');//刘备、关羽
+            // $(s1+s2)直接兄弟选择器
+//            $('div+span').css('color', 'green');//孙权、吕布
+            // $(s1~s2)后续全部兄弟关系节点选择器
+            $('div~span').css('color', 'pink');//孙权、曹操、吕布、周瑜
+        }
+        function f3() {
+//            $('li').css('background-color','pink'); //找到所有li
+            //:first  :last
+//            $('li:first').css('color', 'red'); //找到第一个li
+//            $('li:last').css('color', 'blue'); //找到最后一个li
+//            //:eq(num)
+//            $('li:eq(4)').css('color', 'yellow'); //找到第5个li
+//            $('li:eq(2)').css('color', 'purple'); //找到第5个li
+//            //:gt(num)  :lt(num)节点索引值大于某个范围，小于某个范围  两者都没有等于号
+//            $('li:gt(3)').css('color', 'yellow'); //找到第4个li以后的所有li(4,5```)  不包括3
+//            $('li:lt(2)').css('color', 'red'); //找到第2个li以前的所有li(0,1) 不包括2
+//            //隔行换色 :even  :odd  奇数行和偶数行
+//            $('li:even').css('color','red');
+//            $('li:odd').css('color','blue');
+//            //去除某个li，采用选择器，如下面id选择器
+//            $('li:not(#shizi)').css('background-color','pink');
+//            //匹配标题标签选择器  :header  =$('h1, h2, h3,h4,h5,h6')
+//            $(':header').css('color', 'red');
+            //并且选择器复合使用   既满足标题，又满足class=pear的
+            $(':header.pear').css('color','red');
+            //获取中间的几个元素,并且每个选择器使用前，下表全部是从0开始
+            $('li:gt(1):lt(2)').css('color','orange');  //2，3
+        }
+        function f4() {
+//            $('div:contains(beijing)').css('color','red');
+            $('div:empty').css('background-color','pink');
+//            $('div:has(#apple)').css('background-color','orange');
+//            $('div:parent').css('background-color','purple');
+            console.log($('div:parent'));
+        }
+        function f5() {
+            //:checked
+            console.log($('.aa:checked'));
+            $('.aa:checked').css('background-color','red');
+            console.log($('sex:checked'));
+            //:selected
+            console.log($('option:selected'));
+        }
+    </script>
+</head>
+<body>
+<h1>第一节课-jquery</h1>
+<input type="button" value="触发" onclick="f0()"/>
+<br/>
+<h1>基本选择器,灵感来源于css样式选择器</h1>
+name :<input type="text" name="name" id="user" value="username" class="apple"/><br/>
+email:<input type="text" name="useremail" id="email" value="user_email" class="apple"/><br/>
+<input type="button" value="触发" onclick="f1()"/>
+<br>
+<div style="position: absolute;left: 10px; top: 500px;background-color: lightgray">
+    <h1>层次选择器</h1>
+    <div>
+        <span>刘备</span><br>
+        <p><span>阿斗</span></p>
+        <span>关羽</span><br>
+    </div>
+    <span>孙权</span><br>
+    <span>曹操</span><br>
+    <div>董卓</div>
+    <span>吕布</span><br>
+    <p>貂蝉</p>
+    <span>周瑜</span><br>
+    <input type="button" value="触发" onclick="f2()"/>
+</div>
+<div style="position: absolute;left: 250px; top: 200px;background-color: lightgray">
+    <h2 class="pear">并且（过滤）选择器</h2>
+    <ul>
+        <li>苹果</li>
+        <li class="pear">香蕉</li>
+        <li id="shizi">柿子</li>
+        <li>葡萄</li>
+        <li class="pear">石榴</li>
+        <li>百香果</li>
+    </ul>
+    <input type="button" value="触发" onclick="f3()"/>
+</div>
+<!--<div style="position: absolute;left: 600px; top: 10px;background-color: lightgray">-->
+    <h1>内容过滤选择器</h1>
+    <div>
+        <span>i love beijing</span>
+        <span>xiaoming love shanghai</span>
+    </div>
+    <div style="position: relative; width: 200px; height: 10px"></div>
+    <div>
+        <span id="apple">hello xb</span><br>
+        <span>tangxianb</span>
+    </div>
+    <input type="button" value="触发" onclick="f4()"/>
+<!--</div>-->
+<div style="position: absolute;left: 600px; top: 10px;background-color: lightgray">
+    <h1>表单域选中选择器</h1>
+    <!--多选-->
+    <input type="checkbox" name="fruit" id="apple" class="aa">苹果
+    <input type="checkbox" name="fruit" id="pear" class="aa">梨
+    <input type="checkbox" name="fruit" id="banana" class="aa">香蕉
+    <hr>
+    <!--单选-->
+    <input type="radio" name="sex" id="girl">女
+    <input type="radio" name="sex" id="boy">男
+    <hr>
+    <!--下拉列表-->
+    <select name="city" id="location">
+        <option value="change">---请选择---</option>
+        <option value="sh">上海</option>
+        <option value="xian">西安</option>
+        <option value="bj">北京</option>
+    </select><br>
+    <input type="button" value="触发" onclick="f5()"/>
+</div>
+
+</body>
+</html>
