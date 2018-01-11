@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css样式设置操作</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        function f1() {
+//            三种再jquery中可以采用相同的方式获取
+//            js的dom只能获得 行内  样式
+            console.log($('div').css('color')); //行内
+            console.log($('div').css('width')); //内部
+            console.log($('input').css('font-size')); //外部css
+            console.log($('input').css('border'));  //border是复合样式
+//            border： border-top-style、border-top-color、border-top-width、左边的，下面的、右边的
+//            旧版本需要拆分进行获取
+        }
+//        样式设置
+        function f2() {
+            //行内样式优先级最高
+            //有则修改，无则添加，变为行内样式
+            $('input').css('font-size','30px'); //外部css，补充一个行内样式，覆盖掉外部css中20px
+            $('div').css('color','green'); //修改行内样式
+            $('div').css('font-size','30px'); //设置样式添加
+            $('div').css('border', '1px solid red');
+        }
+        function f3() {
+            //json   fontSize不同，有的用'font-size'
+            $('div').css({fontSize:'40px',color:'purple',width:'300px',height:'200px'});
+        }
+    </script>
+    <link rel="stylesheet" href="css样式设置操作.css">
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: lightgray;
+        }
+    </style>
+
+</head>
+<body>
+<h1>css样式设置操作：行内，内部、外部</h1>
+<div style="color: red">Today we are learning jquery!</div>
+<input type="button" value="获取" onclick="f1()"/>
+<input type="button" value="设置" onclick="f2()"/>
+<input type="button" value="json对象批量设置" onclick="f3()"/>
+</body>
+</html>

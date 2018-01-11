@@ -79,15 +79,16 @@
         mytab.rows[r].cells[2].innerHTML="<input type='text' value='' id='k2'>";
         $('k2').value=con2;
 
-        mytab.rows[r].cells[4].innerHTML="<input type='button' value='修改' onclick='change(this)'>";
+        mytab.rows[r].cells[4].innerHTML="<input type='button' value='修改' onclick='change(" + r + ")'>";
 
         //如何修改？？？？为什么change（r）传不进去
 
     }
-    function change(obj) {
-        console.log(obj.parentNode.parentNode.rowIndex); //获取r值的方法
+    function change(r) {
+//        console.log(obj.parentNode.parentNode.rowIndex); //获取r值的方法
+//        console.log(r);
 //        var r= obj.parentNode.parentNode.childNodes[0].innerHTML;
-        var r= obj.parentNode.parentNode.rowIndex;
+//        var r= obj.parentNode.parentNode.rowIndex;
         var newcon1=$('k1').value;
         var newcon2=$('k2').value;
         mytab.rows[r].cells[1].innerHTML=newcon1;

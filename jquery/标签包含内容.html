@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签包含内容</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        function f1() {
+            console.log($('div').html());
+            //修改内容,里面字符串或者html标签都可以设置
+//            $('div').html('请访问<a href="http://www.baidu.com">baidu</a>');
+//            console.log($('div').html());
+        }
+        function f2() {
+            console.log($('div').text())
+            $('div').text('<p>he</p>llo');  //text不解析标签，<,>变成&lt，&gt，然后解析为括号，空格解析&nbsp
+        }
+    </script>
+</head>
+<body>
+<h1>标签包含内容</h1>
+<div>Today we are <span>learning</span> jquery!</div>
+<input type="button" value="html获取" onclick="f1()"/>
+<input type="button" value="text获取" onclick="f2()"/>
+</body>
+</html>

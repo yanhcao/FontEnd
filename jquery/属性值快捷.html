@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性值快捷</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        //$().val()与$().attr('value');相似的作用
+        function f1() {
+            console.log($('input').val()); //只能选中第一个
+
+        }
+
+//            获取被选中的复选框的value属性值,遍历全部复选框,是否选中,选中则获取value值
+        function f2() {
+            var length=$('.hobby:checked').length;
+            var s='';
+            for (var i=0;i<length;i++){
+//                console.log($('.hobby:checked:eq('+i+')').val());        //i得变为变量
+                s+=$('.hobby:checked:eq('+i+')').val()+',';
+            }
+            s=s.substr(0,s.length-1); //去除最后的逗号
+            console.log(s);
+        }
+//        获取被选中的复选框的value属性值
+        function f3() {
+//            默认banana被选中
+//            js方法:获得全部复选框,判断当前value是否等于2,若等于则为true
+
+//            jQuery:$(全部复选框).val([元素值,元素值]),考研设置value=2则选中banana;
+            $('.hobby').val([2]);  //若选中2,3则[2,3]
+        }
+        function f4() {
+            //单个选中打印
+//            console.log($('option:selected').val());         //等价于$('option:selected').attr('value')
+
+            //多个选中打印
+//            var length=$('option:selected').length;
+//            var s='';
+//            for (var i=0;i<length;i++){
+////                console.log($('option:selected:eq('+i+')').val()); //分别一行一个值打印
+//                s+=$('option:selected:eq('+i+')').val()+','; //将所有value拼接成字符串
+//            }
+//            s=s.substr(0,s.length-1); //去除最后的逗号
+//            console.log(s);
+
+            //另外一种单选多选的情况
+            console.log($('select').val()); //获得全部下拉列表项目的value值
+
+        }
+        function f5() {
+            $('select').val(['A','C']); //默认value=A的option被选中
+        }
+        function f6() {
+            console.log($('.sex:checked').val());
+        }
+        function f7() {
+            $('.sex').val(['sex1']);
+        }
+    </script>
+</head>
+<body>
+<h1>value属性值快捷--用于复选框、下拉列表、单选按钮</h1>
+<input type="button" value="aa" name="a"/>
+<input type="button" value="bb" name="a"/>
+<input type="button" value="获取" onclick="f1()"/>
+<h2>$().val()用于复选框</h2>
+
+爱好:
+<input type="checkbox" name="fruit[]" class="hobby" value="1">apple
+<input type="checkbox" name="fruit[]" class="hobby" value="2">banana
+<input type="checkbox" name="fruit[]" class="hobby" value="3">pear
+<br/>
+<!--获取被选中的复选框的value属性值-->
+<input type="button" value="获取" onclick="f2()"/>
+<!--设置默认哪个复选框被选中-->
+<input type="button" value="设置" onclick="f3()"/>
+<br/>
+<h2>$().val()用于下拉列表</h2>
+曾经去过的城市:
+<br>
+<!--下拉列表可以多选multiple="multiple"-->
+<select name="city" id="check1" multiple="multiple">
+    <option value="A">--请选择--</option>
+    <option value="B">shanghai</option>
+    <option value="C">xian</option>
+    <option value="D">beijing</option>
+</select>
+<br>
+<!--获取被选中的下拉列表的value属性值-->
+<input type="button" value="获取" onclick="f4()"/>
+<!--设置默认哪个下拉列表被选中-->
+<input type="button" value="设置" onclick="f5()"/>
+<br/>
+<h2>$().val()用于单选按钮</h2>
+<input type="radio" value="sex1" class="sex">girl
+<input type="radio" value="sex2" class="sex">boy
+<br>
+<!--获取被选中的单选框的value属性值-->
+<input type="button" value="获取" onclick="f6()"/>
+<!--设置默认哪个单选框被选中-->
+<input type="button" value="设置" onclick="f7()"/>
+<br/>
+</body>
+</html>
