@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个复选框来控制别的复选框的选中状态</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        function selAll() {
+//            var flag = $('#sel').prop('checked');
+            var flag = $('#sel').is(':checked'); //与上述prop效果一样，判断选中状态
+            $('.ball').prop('checked',flag);
+        }
+    </script>
+    <style type="text/css"></style>
+</head>
+<body>
+<h1>一个复选框来控制别的复选框的选中状态</h1>
+爱好：<br>
+<input type="checkbox" name="ball[]" id="sel" onclick="selAll()"/><br>
+<input type="checkbox" name="ball[]" class="ball" value="11">足球
+<input type="checkbox" name="ball[]" class="ball" value="22">篮球
+<input type="checkbox" name="ball[]" class="ball" value="33">排球
+<input type="checkbox" name="ball[]" class="ball" value="44">棒球
+</body>
+</html>

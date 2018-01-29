@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大缩小图片</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <style type="text/css">
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        function big() {
+            //获取图片原宽度高度
+            var w=$('img').width();
+            var h=$('img').height();
+            var new_w=w+50;
+            var new_h=new_w*h/w; //比例增加高度
+            $('img').width(new_w);
+            $('img').height(new_h);
+        }
+        function little() {
+            var w=$('img').width();
+            var h=$('img').height();
+            var new_w=w-50;
+            var new_h=new_w*h/w; //比例增加高度
+            $('img').width(new_w);
+            $('img').height(new_h);
+        }
+    </script>
+</head>
+<body>
+<h1>放大缩小图片,可以不设置高度，让高度自适应，只管宽度即可</h1>
+<img src="../DOM/bu.png"/><br>
+<input type="button" value="放大" onclick="big()"/>
+<input type="button" value="缩小" onclick="little()"/>
+</body>
+</html>

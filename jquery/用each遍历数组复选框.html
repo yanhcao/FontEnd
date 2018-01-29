@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用each遍历数组复选框</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+//        each遍历数组  $.each(数组， function(k每个元素的下标，v每个元素的值){} )；
+//        for循环  for-in
+        var color= ['gold', 'orange', 'blue', 'red', 'white'];
+        $.each(color, function (k,v) {
+            console.log(k+'----'+v);
+        })
+
+//        each遍历对象（获得各个成员）
+//        $.each(对象， function(k成员名称， v成员值){});
+        var cat={name:'kitty',color:'black', climb:function () {
+            console.log('会爬树');
+        }};
+        $.each(cat, function (k, v) {
+            console.log(k+'---'+v);
+        })
+
+//        遍历jquery对象  $().each(function(k代表DOM对象下标,v代表DOM对象){});
+        var clr = ['red','gold', 'orange', 'blue', 'pink', 'green']
+        window.onload=function () {
+            $('li').each(function (k,v) {  //v是dom对象
+//                console.log(k);
+                console.log(this);   //this可以打印整个li里面所有的属性以及value值
+                v.style.color='blue';
+//                $(v).css('background-color','lightgreen'); //dom对象变为jquery对象
+//                $(this).css('background-color','pink');  //用this代替v也可以
+
+                $(this).css('background-color', clr[Math.floor(Math.random()*6)]); //随机颜色给li元素定义
+            })
+        }
+
+    </script>
+</head>
+<body>
+<h1>用each遍历数组复选框</h1>
+<ul>
+    <li>拉萨</li>
+    <li>西藏</li>
+    <li>乌鲁木齐</li>
+    <li>济南</li>
+</ul>
+</body>
+</html>

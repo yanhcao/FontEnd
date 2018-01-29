@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery三种加载事件</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+//        三种加载事件
+//        $(document).ready(function () {
+//            window.alert('1234');
+//        });
+//        $().ready(function () {
+//            console.log('I love');
+//        });
+//        $(function () {
+//            console.log('xianbin');
+//        });
+
+        //鼠标移入事件,设置事件
+//$(document).ready(function() {
+$(function() {  //对上述的封装
+    $('div').mouseover(function () {
+        $('div').css('background-color', 'lightgreen');
+    });
+    $('div').mouseout(function () {
+        //jquery中的this代表dom对象，若有多个则依次代表每个dom对象
+//        $('div').css('background-color', 'lightgray');
+        $(this).css('background-color', 'lightgray'); //与上述等价
+    });
+    //允许为同一个对象设置不同的事件，在dom2级事件中就允许这样做，如：addEventListener与removeEventListener
+    $('div').mouseover(function () {
+        $(this).css('font-size', '30px');
+    });
+    $('div').mouseout(function () {
+        $(this).css('font-size', '18px');
+    });
+});
+
+//触发事件$().事件类型()
+        function f1() {
+             //触发对象事件执行
+            $('div').mouseover();  //触发上述jquery中的两个mouseover事件，背景和字体大小
+        }
+    </script>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 100px;
+            font-size: 18px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+<h1>jquery三种加载事件</h1>
+<h1>jquery加载事件</h1>
+<div>
+    I love XB!
+</div>
+<input type="button" value="触发" onclick="f1()"/>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格隔行换色</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        window.onload = function changeColor() {       //页面加载时显示
+//            $('.mytr').css('background-color','yellow');
+            $('tr:first').css('background-color','yellow');  //不需要用class选择器
+            $('tr:gt(0):odd').css('background-color','lightblue');  //去掉第一行，然后重新计算奇数行
+        }
+    </script>
+    <style type="text/css">
+        h1{
+            margin: auto;
+            text-align: center;
+        }
+        table{
+            text-align: center;
+            border: 1px solid black;
+            margin: auto;
+            width: 500px;
+            border-collapse: collapse; //cell-spacing=0
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>表格隔行换色</h1>
+<table class="myt">
+    <tr class="mytr">
+        <td>序号</td><td>名称</td><td>价格</td><td>数量</td>
+    </tr>
+    <tr>
+        <td>1</td><td>iphone手机</td><td>5000</td><td>10</td>
+    </tr>
+    <tr>
+        <td>2</td><td>htc手机</td><td>2000</td><td>12</td>
+    </tr>
+    <tr>
+        <td>3</td><td>诺基亚手机</td><td>1500</td><td>11</td>
+    </tr>
+    <tr>
+        <td>4</td><td>小米手机</td><td>1600</td><td>4</td>
+    </tr>
+    <tr>
+        <td>5</td><td>华为手机</td><td>2200</td><td>23</td>
+    </tr>
+</table>
+<!--<input type="button" value="color" onclick="changeColor()"/>-->
+</body>
+</html>

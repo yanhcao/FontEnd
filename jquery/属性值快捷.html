@@ -10,7 +10,6 @@
             console.log($('input').val()); //只能选中第一个
 
         }
-
 //            获取被选中的复选框的value属性值,遍历全部复选框,是否选中,选中则获取value值
         function f2() {
             var length=$('.hobby:checked').length;
@@ -57,6 +56,32 @@
         function f7() {
             $('.sex').val(['sex1']);
         }
+        function selAll() {
+            //全选  attr与css一样是具有批量处理效果的(很多jquery里面方法具有遍历机制，为每个dom对象都调用对应方法)
+            $('.ball').prop('checked',true);
+        }
+        function selnotAll() {
+            //全不选
+            $('.ball').prop('checked',false);
+        }
+        function selfan() {
+            for(var i=0; i<$('.ball').length; i++){
+                //attr与prop的区别，前者是html，后者是js中，前者返回字符串，并且在1.6版本返回checked和undefine，而后者1.6版本返回ture和false
+                var flag=$('.ball:eq('+i+')').prop('checked'); //判断选中状态
+                $('.ball:eq('+i+')').prop('checked', !flag);
+//                    $('.ball:eq('+i+')').removeAttr('checked');
+//                console.log($('.ball:eq('+i+')').attr('checked'));
+//                var flag=$('.ball:eq('+i+')').attr('checked'); //判断选中状态
+//                flag = (flag==undefined)? true: undefined;
+////                window.alert(flag);
+//                $('.ball:eq('+i+')').attr('checked', Boolean(flag));
+            }
+        }
+
+        function select(){
+            console.log(1);
+            this.attr('checked',true);
+        }
     </script>
 </head>
 <body>
@@ -100,6 +125,22 @@
 <input type="button" value="获取" onclick="f6()"/>
 <!--设置默认哪个单选框被选中-->
 <input type="button" value="设置" onclick="f7()"/>
-<br/>
+
+<h1>复选框的全选，反选，全部选操作</h1>
+爱好:
+<form>
+    <input type="checkbox" name="ball[]" class="ball" value="11">足球
+    <input type="checkbox" name="ball[]" class="ball" value="22">篮球
+    <input type="checkbox" name="ball[]" class="ball" value="33">排球
+    <input type="checkbox" name="ball[]" class="ball" value="44">棒球
+    <br/>
+    <!--全选-->
+    <input type="button" value="全选" onclick="selAll()"/>
+    <!--设置全不选-->
+    <input type="button" value="全不选" onclick="selnotAll()"/>
+    <!--设置反选-->
+    <input type="button" value="反选" onclick="selfan()"/>
+    <br/>
+</form>
 </body>
 </html>
