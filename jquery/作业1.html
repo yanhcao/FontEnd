@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业1</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        //在加载事件里面给option设置双击事件，使得双击某个元素即可完成转移
+        $(function () {
+            //双击判断父级节点，若为aa则改成bb，若为bb则改成aa
+            $('option').dblclick(function () {
+//                window.alert(this.parentNode.id);
+                if(this.parentNode.id=='aa'){
+                    $(this).appendTo($('#bb'));
+                }else {
+                    $(this).appendTo($('#aa'));
+                }
+            });
+        })
+        function f1() {
+            $('#bb').append($('#aa option:selected'));
+        }
+        function f2() {
+            $('#bb').append($('#aa option'));
+        }
+        function f3() {
+            $('#aa').append($('#bb option:selected'));
+        }
+        function f4() {
+            $('#aa').append($('#bb option'));
+        }
+    </script>
+    <style type="text/css">
+        select{
+            width: 180px;
+            height: 250px;
+            background-color: lightskyblue;
+        }
+        input{
+            width: 40px;
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+<h1>选择器和文档处理实现</h1>
+<div style="width: 200px; height: 200px; top: 25px; left: 25px; float: left">
+    <select id="aa" style="background-color: lightskyblue" multiple="multiple">
+        <option value="1">选项1</option>
+        <option value="2">选项2</option>
+        <option value="3">选项3</option>
+        <option value="4">选项4</option>
+        <option value="5">选项5</option>
+        <option value="6">选项6</option>
+        <option value="7">选项7</option>
+        <option value="8">选项8</option>
+    </select>
+</div>
+<div style="width: 50px; height: 50px; top: 100px; left: 260px; float: left">
+    <input type="button" value="-->" onclick="f1()"/><br>
+    <input type="button" value="==>" onclick="f2()"/><br>
+    <input type="button" value="<--" onclick="f3()"/><br>
+    <input type="button" value="<==" onclick="f4()"/><br>
+</div>
+<div style="width: 200px; height: 200px; top: 25px; left: 400px; float: left">
+    <select id="bb" style="background-color: lightskyblue;" multiple="multiple">
+        <option value="0">选项0</option>
+    </select>
+</div>
+</body>
+</html>

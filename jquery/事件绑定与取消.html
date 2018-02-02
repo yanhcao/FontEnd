@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定与取消</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        $(function () {
+            //页面加载完成则给div绑定事件
+//            //方法1：$('div').bind(事件类型,事件处理函数);
+//            $('div').bind('mouseover', function () {
+//                $(this).css('background-color','pink');
+//            });
+//            $('div').bind('mouseout', function () {
+//                $(this).css('background-color','lightskyblue');
+//            });
+
+            //给许多不同类型的事件绑定同一个处理函数
+            //方法2：$('div').bind(事件类型1 事件类型2 事件类型3 事件类型4,事件处理函数);
+            //每个事件之间用空格来分隔,但是也不能用多个空格，否则只有第一个事件类型起作用
+//            $('div').bind('click mouseover mouseout',function () {
+//                console.log(1234);
+//            });
+
+            //对方法1进行批量设置
+            //方法3：$('div').bind(json对象);
+            $('div').bind({
+                click:function () {
+                    console.log('111');
+                },
+                mouseover:function () {
+                    console.log('222');
+                },
+                mouseout:function () {
+                    console.log('333');
+                }
+            });
+            
+            //重新给div绑定一个mouseover
+            $('div').bind('mouseover',function () {
+                $(this).css('font-size', '30px');
+            });
+            $('div').bind('mouseout',function () {
+                $(this).css('font-size', '15px');
+            });
+
+            $('div').bind('click',fa);
+        });
+        function fa() {
+            console.log('aaa');
+        }
+        function cancel() {
+//            $('div').unbind();  //全部取消
+//            $('div').unbind('mouseout');
+            $('div').unbind('click', fa);  //不能直接访问fa，因为fa是上面加载函数内部的，所以将fa放到外面即可
+        }
+    </script>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+<h1>事件绑定</h1>
+<div>It`s sunshine.</div>
+
+<h1>事件取消</h1>
+<input type="button" value="取消绑定事件" onclick="cancel()"/>
+</body>
+</html>

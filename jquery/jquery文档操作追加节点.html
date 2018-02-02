@@ -4,8 +4,126 @@
     <meta charset="UTF-8">
     <title>jquery文档操作追加节点</title>
     <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        function f1() {
+            //主动添加，父节点.append()后置，父节点.prepend()前置
+            $('#shu').append('<li>阿斗</li>');
+            //选中已有节点进行追加，如追加吴国周瑜（下标1）到蜀国
+            $('#shu').append($('#wu li:eq(1)'));  //将吴国的周瑜删掉，dom节点位置移动
+//            $('#wu').prepend('<li>马超</li>');
+
+            //被动追加，被追加节点.appendTo(父节点)后置追加，被追加节点.prependTo(父节点)前置追加
+            $('<li>黄忠</li>').appendTo($('#shu'));
+            //也可以追加已有节点，发生物理位置移动
+            $('#shu li:eq(1)').prependTo($('#wu'));  //或者直接给要移动的节点一个id如$('#xiang').prependTo()
+            $('<li>孙尚香</li>').prependTo($('#wu'));
+        }
+
+        function f2() {
+            //主动的外部兄弟追加，兄弟节点.after()后置追加,兄弟节点.before()前置追加
+            $('#shu').after('<li>阿斗</li>');
+            $('#wu').before('<li>孙子</li>');
+
+            //被动的外部兄弟节点追加，被追加节点.insertAfter(兄弟节点)后置追加，被追加节点.insertBefore(兄弟节点)前置追加
+            $('<li>老子</li>').insertAfter($('#shu'));
+            $('<li>墨子</li>').insertBefore($('#shu'));
+        }
+
+        function f3() {
+            //新节点替换,用黄瓜替换西红柿
+            $('<li>黄瓜</li>').replaceAll($('#xi'));
+            //已有节点替换
+        }
+        function f4() {
+            //新节点被替换，用银桥代替盖中盖
+            $('#gai').replaceWith($('#xi'));
+        }
+        function f5() {
+            $('#hobbby').empty();  //父节点清空所有的子节点
+        }
+        function f6() {
+//            $('#hobbby li:first').remove(); //删除指定节点
+            //采用联合选择器
+            $('#ball, #li').remove();
+        }
+
+        //复制节点$().clone(true/false),复制节点的事件或者只是复制节点
+        $(document).ready(function () {
+            //mouseover能够遍历，具有遍历机制，会给每个li设置事件
+            $('#stu li').mouseover(function () {
+                $(this).css('color','green');
+            });
+            $('#stu li').mouseout(function () {
+                $(this).css('color','');
+            });
+        });
+        function f7() {
+            var fu_xb = $('#stu li:first').clone(false);  //复制显斌准备放到id为stu2中
+            $('#aa').before(fu_xb);
+        }
+        function f8() {
+            var fu_xb = $('#stu li:first').clone(true);  //复制显斌准备放到id为stu2中
+            $('#aa').before(fu_xb);
+        }
+    </script>
 </head>
 <body>
-<h1>jquery文档操作追加节点(父子关系)</h1>
+<h1>jquery文档操作追加节点(父子关系、兄弟关系)</h1>
+<ul id="shu">
+    <li>刘备</li>
+    <li>关羽</li>
+    <li>张飞</li>
+    <li>赵云</li>
+    <li>诸葛亮</li>
+</ul>
+<ul id="wu">
+    <li>孙权</li>
+    <li>周瑜</li>
+    <li>黄盖</li>
+    <li>小乔</li>
+</ul>
+<input type="button" value="父子追加节点" onclick="f1()">
+<input type="button" value="兄弟追加节点" onclick="f2()">
+<h1>jquery文档操作节点替换</h1>
+<ul id="fruit">
+    <li>苹果</li>
+    <li>香蕉</li>
+    <li>西瓜</li>
+    <li id="xi">西红柿</li>
+    <li>荔枝</li>
+</ul>
+<ul id="milk">
+    <li>伊利</li>
+    <li>蒙牛</li>
+    <li>雀巢</li>
+    <li id="gai">盖中盖</li>
+</ul>
+<input type="button" value="主动节点替换" onclick="f3()">
+<input type="button" value="被动节点替换" onclick="f4()">
+
+<h1>jquery文档操作节点删除</h1>
+<ul id="hobbby">
+    <li>逛街</li>
+    <li>香蕉</li>
+    <li>西瓜</li>
+    <li id="ball">足球</li>
+    <li id="li">荔枝</li>
+</ul>
+<input type="button" value="父节点清空子节点" onclick="f5()">
+<input type="button" value="删除指定节点" onclick="f6()">
+
+<h1>jquery文档操作节点删除</h1>
+<ul id="stu">
+    <li>显斌</li>
+    <li>老毛</li>
+    <li>狗头</li>
+    <li id="mj">马洁</li>
+</ul>
+<ul>
+    <li id="aa">aa</li>
+    <li>bb</li>
+</ul>
+<input type="button" value="复制false" onclick="f7()">
+<input type="button" value="复制true" onclick="f8()">
 </body>
 </html>

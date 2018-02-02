@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        //寻找下面的input框，显然第一个和第二个属性名称有所不同，第一个特有size，第二个特有onclick
+
+        function f1() {
+//            //方法1：[name]节点必须含有name属性
+//            $('[size]').css('background-color', 'pink');
+//            //方法2：[name=value]节点必须有name属性，而且其值等于value
+//            $('[size=30]').css('color', 'red');
+//            //方法3：[name^=value]节点必须有name属性，而且其值必须以value开头（^表示开头，正则表达式中）
+//            $('[value^=tom]').css('font-size', '30px');
+//            //方法4：[name$=value]节点必须有name属性，而且其值必须以value结尾（$表示结尾，正则表达式中）
+//            $('[value$=3]').css('font-family', '华文新魏');
+            //方法5：[name!=value]节点必须有name属性，而且其值必须不等于value
+            //此种方式即使没有name属性也会找到,如$('[class!=orange]').css();
+            //我们不想要这种情况,只希望找到具有class属性，但是不是orange的元素
+            $('[class][class!=orange]').css('background-color', 'pink'); //采用该种并且选择器即可解决这个问题
+            //并且选择器$(s1s2s3s4),需要同时满足所有条件称为并且选择器
+//            $('input[size][class*=e]]')
+            //方法6：[name*=value]节点必须有name属性，而且其值必须出现value值
+            $('[class*=e]').css('color', 'red');
+        }
+    </script>
+</head>
+<body>
+<h1>属性选择器</h1>
+<input type="text" size="10" value="tom" class="orange"/><br>
+<input type="text" size="30" name="usermail" value="123@163"/><br>
+<input type="text" size="15" value="tomaa" class="pear"/><br>
+
+<input type="button" value="触发" onclick="f1()"><br>
+</body>
+</html>
