@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联合动画</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        function f1() {
+            $('div').hide(2000,f2);
+        }
+        function f2() {
+            $('div').css('background-color', 'blue');
+            $('div').slideDown(2000,f3);
+        }
+        function f3() {
+            $('div').css('background-color', 'purple');
+            $('div').slideUp(2000,f4);
+        }
+        function f4() {
+            $('div').css('background-color', 'green');
+            $('div').fadeIn(2000,f1);
+        }
+
+        //使用fadeTo()来给div设置透明度，可以只有速度和透明度两个参数
+        function changeColor() {
+            //$('#pat').fadeTo(速度，透明度，回调函数)； 设置透明度
+            $('#son').fadeTo(1000,0.3);
+        }
+    </script>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: green;
+        }
+        #pat{
+            width: 400px;
+            height: 300px;
+            background-color: green;
+        }
+        #son{
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            left: 350px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<h1>联合动画效果</h1>
+<div>
+    its a dog
+</div>
+<input type="button" value="触发动画效果" onclick="f1()">
+<br><br><br>
+<div id="pat">
+    <div id="son">its son</div>
+</div>
+<input type="button" value="触发" onclick="changeColor()">
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>颜色渐变动画</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        function f1() {
+            //隐藏
+            //$().fadeOut([速度，回调函数])  速度单位ms
+            //回调函数：效果呈现完毕后会自动调用函数执行
+            $('div').fadeOut(3000);
+        }
+        function f2() {
+            //显示
+            //$().fadeIn([速度，回调函数])  参数可以隐藏
+            $('div').fadeIn(3000);
+        }
+        function f3() {
+            $('div').fadeToggle(2000, f3);  //自己调用自己
+        }
+        //        $(function () {
+        //            setInterval('f3()', 3000);
+        //        });
+    </script>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>颜色渐变动画</h1>
+<div>
+    today is rain
+</div>
+<input type="button" value="隐藏" onclick="f1()">
+<input type="button" value="显示" onclick="f2()">
+<input type="button" value="开关" onclick="f3()">
+</body>
+</html>

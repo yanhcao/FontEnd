@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本动画</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        function f1() {
+            //隐藏
+            //$().hide([速度，回调函数])  速度单位ms
+            //回调函数：效果呈现完毕后会自动调用函数执行
+            $('div').hide(3000, function () {
+                alert('我消失了');
+            });
+        }
+        function f2() {
+            //显示
+            //$().show([速度，回调函数])  参数可以隐藏
+            $('div').show(3000, function () {
+                alert('我出现了');
+            });
+        }
+        function f3() {
+            $('div').toggle(2000);
+        }
+        function interv() {
+            setInterval('f3()', 2000);
+        }
+    </script>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: #99CCFF;
+        }
+    </style>
+</head>
+<body>
+<h1>基本动画</h1>
+<div>
+    today is rain
+</div>
+<input type="button" value="隐藏" onclick="f1()">
+<input type="button" value="显示" onclick="f2()">
+<input type="button" value="开关" onclick="interv()">
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax请求</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        function f1() {
+            //$.get(url,[data],[function], [dataType])  中括号中是可选的
+//            $.get('../php/11.php', function (msg) {
+//                alert(msg);
+//            });
+//            $.get('../php/11.php', {name:'kitty', age:5}, function (msg) {
+//                alert(msg);
+//            });
+
+//            $.get('../php/11.php', function (msg) {
+//                alert(msg);  //若输出json对象，则返回对象
+//                //可以输出一下内容
+//                console.log(msg.city);
+//                console.log(msg.temp);
+//            }, 'json');
+
+            $.ajax({
+                url:'../php/11.php',
+                data:{name:'kitty', age:5},
+                dataType:'html', //text,html,xml,json
+                type:'post',
+                success:function (msg) {
+                    alert(msg);
+                }
+            });
+        }
+    </script>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>ajax请求</h1>
+<div>
+    today is rain
+</div>
+<input type="button" value="触发" onclick="f1()">
+</body>
+</html>

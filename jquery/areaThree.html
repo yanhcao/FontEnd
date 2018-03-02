@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地区三级联动</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        function show_province() {
+            //ajax去服务器将xml的地区信息请求回来
+            //从中筛选出省份信息显示
+            $.get('../php/ChinaArea.xml',function (msg) {
+                //对服务器返回的xml信息进行处理
+                console.log(msg);
+            },'xml');
+        }
+        $(function () {
+            show_province();
+        })
+    </script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<h1>地区三级联动</h1>
+省份：
+<select id="province">
+    <option value="0">-请选择-</option>
+</select>&nbsp;&nbsp;
+城市：
+<select id="city">
+    <option value="0">-请选择-</option>
+</select>&nbsp;&nbsp;
+地区：
+<select id="area">
+    <option value="0">-请选择-</option>
+</select>&nbsp;&nbsp;
+</body>
+</html>
