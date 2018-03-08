@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容淡入淡出</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.child_1').click(function () {
+                $(this).next().slideToggle(1000);  //fadeToggle/slideToggle/toggle
+            });
+        });
+    </script>
+    <style>
+        #parent{
+            position: absolute;
+            width: 200px;
+            height: 150px;
+            border: 1px dotted gray;
+        }
+        .child_1{
+            border-bottom: 1px dotted gray;
+            background-color: gray;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .child_2{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div class="child_1">新闻标题</div>
+    <div class="child_2">新闻内容新闻内容新闻内新闻内容新闻内容容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</div>
+</div>
+</body>
+</html>

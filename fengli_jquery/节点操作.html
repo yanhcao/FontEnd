@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点操作</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            $('ul li').click(function () {
+                $(this).clone(true).prependTo('#ul1');  //append prepend appendTo prependTo
+            });
+//            $('ul li').dblclick(function () {
+//                $(this).remove();
+//            });
+        });
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li title="1">橘子</li>
+    <li title="2">苹果</li>
+    <li title="3">梨</li>
+    <li title="4">香蕉</li>
+</ul>
+<ul><li title="5">水果</li></ul>
+</body>
+</html>

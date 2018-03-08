@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮箱登录页面</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            $('text').css('width','200px');
+            $('#address').focus(function () {  //相当于js中的onfocus方法,获得焦点
+                if($(this).val()=='请输入邮箱地址'){  //可以用this.defaultValue来表示'请输入邮箱地址'，如下
+                    $(this).val('');
+                }
+                $(this).addClass('focus');  //或者在css中采用input:focus{}
+            }).blur(function () {   //相当于js中的onblur方法，失去焦点
+                if($(this).val()==''){
+                    $(this).val('请输入邮箱地址');
+                }
+                $(this).removeClass('focus');
+            });
+//            $('#address').blur(function () {   //相当于js中的onblur方法，失去焦点
+//                if($(this).val()==''){
+//                    $(this).val('请输入邮箱地址');
+//                }
+//            });
+            $('#passward').focus(function () {
+                if($(this).val()==this.defaultValue){
+                    $(this).val('');
+                }
+            });
+            $('#passward').blur(function () {
+                if($(this).val()==''){
+                    $(this).val(this.defaultValue);
+                }
+            });
+            //当点击放大按钮，若评论框小于500px，则在原有高度上增加50px
+            //若点击缩小按钮，若评论框大于50px，则在原有高度上减小50px
+            $('.bigger').click(function () {
+                if($('#comment').height()<500){
+//                    $('#comment').height($('#comment').height()+50);
+                    $('#comment').animate({height:'+=50'}, 400); //与上面的话语相同，经过0.4s变化
+                }
+            });
+            $('.smaller').click(function () {
+                if($('#comment').height()>50){
+                    $('#comment').height($('#comment').height()-50);
+                }
+            });
+            //以滚动条方式进行高度变化
+            var $content=$('#content');
+            $('.up').click(function () {
+                if(!$content.is(':animated')){  //判断是否处于动画状态
+                    $content.animate({scrollTop:'-=50'},400); //滚动条
+                }
+            });
+            $('.down').click(function () {
+                if(!$content.is(':animated')){  //判断是否处于动画状态
+                    $content.animate({scrollTop:'+=50'},400); //滚动条
+                }
+            });
+        });
+    </script>
+    <style type="text/css">
+        input:focus{
+            border: 1px solid blue;
+            background-color: lightgray;
+        }
+        .focus{
+            border: 1px solid blue;
+            background-color: lightgray;
+        }
+        #content{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="address" value="请输入邮箱地址"><br>
+<input type="text" id="passward" value="请输入密码"><br>
+<input type="button" value="登录">
+<br><br><br>
+<div>
+    <span class="bigger">放大</span>&nbsp;&nbsp;&nbsp;
+    <span class="smaller">缩小</span><br>
+    <textarea id="comment" cols="30" rows="10">多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化
+        多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化
+        多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化</textarea>
+</div>
+<br><br><br>
+
+<div>
+        <span class="up">向上</span>&nbsp;&nbsp;&nbsp;
+        <span class="down">向下</span><br>
+        <textarea id="content" cols="30" rows="10">多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化
+        多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化
+        多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化</textarea>
+</div>
+</body>
+</html>

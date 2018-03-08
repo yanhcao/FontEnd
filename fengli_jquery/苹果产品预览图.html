@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>苹果产品预览图</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            $('.img_bigger img').css('display','none');
+            $('.img_bigger div').hide();
+            var window_width=$(window).width();
+//            window.alert(window_width);
+            var img_left=(window_width-400)/2+'px';
+//            window.alert(img_left);
+            $('.img_bigger').css('left', img_left);
+            $('.img_little img').mouseover(function () {
+                var img_index=$(this).index();
+//                window.alert(img_index);
+                $('.img_bigger img:eq('+img_index+')').css('display','block');
+                $('.img_bigger div:eq('+img_index+')').show();
+            });
+            $('.img_little img').mouseout(function () {
+                var img_index=$(this).index();
+                $('.img_bigger img:eq('+img_index+')').css('display','none');
+                $('.img_bigger div:eq('+img_index+')').hide();
+            });
+        });
+    </script>
+    <style type="text/css">
+        .img_little{
+            margin: auto;
+            width: 620px;
+            height: 110px;
+        }
+        .img_little img{
+            width: 90px;
+            height: 90px;
+            margin-left: 8px;
+            padding: 10px;
+            border: 1px dotted gray;
+        }
+        .img_bigger{
+            position: absolute;
+            top: 80px;
+            width: 400px;
+            height: 420px;
+        }
+        .img_bigger img{
+            height: 400px;
+            width: 400px;
+            border: 1px solid black;
+        }
+        .img_bigger div{
+            position: absolute;
+            width: 402px;
+            height: 20px;
+            top: 400px;
+            background-color: black;
+            font-size: 16px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="img_little">
+    <img src="../image/1.png">
+    <img src="../image/2.png">
+    <img src="../image/3.png">
+    <img src="../image/4.png">
+    <img src="../image/5.png">
+</div>
+<div class="img_bigger">
+    <img src="../image/1.png"><div>苹果电脑</div>
+    <img src="../image/2.png"><div>苹果盒子</div>
+    <img src="../image/3.png"><div>苹果ipod</div>
+    <img src="../image/4.png"><div>苹果平板电脑</div>
+    <img src="../image/5.png"><div>苹果手机</div>
+</div>
+</body>
+</html>
