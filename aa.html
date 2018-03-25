@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aa——pic</title>
+    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var kw=/size/;
+            if(kw.test($('img').src)){
+                this.css(display,'block');
+            }else {
+                this.css(display,'none');
+            }
+//            window.alert($('img').length);
+//            alert($('img')[0].src);
+        });
+        function f1() {
+            for(var i=0;i<$('img').length;i++){
+                $('img')[i].src= $('img')[i].src+'&size=1000';
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input type="button" value="放大" onclick="f1()"/>
+    <img src="http://labs.tineye.com/images/mobile-menu.png"/>
+    <img src="http://labs.tineye.com/images/palette.png"/>
+    <img src="http://labs.tineye.com/images/delete.png"/>
+    <img src="http://labs.tineye.com/images/refine.png"/>
+    <img src="https://img.tineye.com/flickr-images/?filepath=labs-flickr-public/images/dd/17325357_dd859a7754_m.jpg&size=85"/>
+    <img src="http://labs.tineye.com/images/result-filler.png"/>
+    <img src="https://img.tineye.com/flickr-images/?filepath=labs-flickr-public/images/9e/3474719452_9ed3c060ca_m.jpg&size=75"/>
+    <img src="https://img.tineye.com/flickr-images/?filepath=labs-flickr-public/images/8e/2112179783_8edf3e29fc_m.jpg&size=99"/>
+    <img src="https://img.tineye.com/flickr-images/?filepath=labs-flickr-public/images/cf/4876731141_cfbe301013_m.jpg&size=174"/>
+    <img src="https://img.tineye.com/flickr-images/?filepath=labs-flickr-public/images/3b/6163897164_3bfa749bcb_m.jpg&size=87"/>
+    <img src="https://img.tineye.com/flickr-images/?filepath=labs-flickr-public/images/90/7084406405_9017ccd1a4_m.jpg&size=51"/>
+    <img src="https://img.tineye.com/flickr-images/?filepath=labs-flickr-public/images/f9/2537665418_f9d83a23e9_m.jpg&size=74"/>
+    <img src="https://img.tineye.com/flickr-images/?filepath=labs-flickr-public/images/35/4526662038_35cc80ff52_m.jpg&size=82"/>
+    <img src="https://img.tineye.com/flickr-images/?filepath=labs-flickr-public/images/83/3447318893_83f5e23f90_m.jpg&size=90"/>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+    <script type="text/javascript">
+        var speed=100;
+        setTimeout(setInterval('move(speed-10)',500),5000);
+        function move(speed) {
+            var mydiv=document.getElementById('myDiv');
+            var left=parseInt(mydiv.offsetLeft);
+
+            var newleft=mydiv.offsetLeft+(1*speed);
+            mydiv.style.left=newleft+'px';
+        }
+    </script>
+    <style type="text/css">
+        #myDiv{
+            position: absolute;
+            left: 10px;
+            top:100px;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>实现一个div滑动的动画，由快至慢5s结束(不准用css3)</h1>
+<div id="myDiv"></div>
+</body>
+</html>
