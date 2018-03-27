@@ -1,11 +1,5 @@
 function compare(v1,v2) {
-    if(v1>v2){
-        return 1;
-    }else if(v1<v2){
-        return -1;
-    }else{
-        return 0;
-    }
+    return v1-v2;
 }
 // var x=[0,2,0,2];
 // var y=[0,2,2,0];

@@ -4,20 +4,38 @@
     <meta charset="UTF-8">
     <title>test1</title>
     <script type="text/javascript">
-        var speed=100;
-        setTimeout(setInterval('move(speed-10)',500),5000);
+        var speed=10;
+        var id = setInterval('move(speed--)',500);
+        var start = 0;
+        var dir = 1;
+
         function move(speed) {
             var mydiv=document.getElementById('myDiv');
             var left=parseInt(mydiv.offsetLeft);
-
-            var newleft=mydiv.offsetLeft+(1*speed);
+            if(dir==1){
+                var newleft=mydiv.offsetLeft+(50*speed);
+            }else{
+                var newleft=mydiv.offsetLeft-(50*speed);
+            }
             mydiv.style.left=newleft+'px';
+            start = start + 500;
+            if(start==5000){
+                clearInterval(id);
+            }
+//            if(--speed==1){
+//                speed=1;
+//            }
+//            console.log(mydiv.style.left);
+            console.log(mydiv.offsetLeft);
+            if(mydiv.offsetLeft-50<0||mydiv.offsetLeft+50>document.body.offsetWidth){
+                dir = -dir;
+            }
         }
     </script>
     <style type="text/css">
         #myDiv{
             position: absolute;
-            left: 10px;
+            left: 0px;
             top:100px;
             width: 50px;
             height: 50px;

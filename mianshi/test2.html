@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试二</title>
+    <script type="text/javascript">
+        function f1() {
+            var myText=document.getElementById('myText');
+//            var text = document.createElement("div");
+            var text=document.getElementById('div');
+            var arr=['西安天气','大秦网','西安邮政快递','陕西','延安天气','延安邮政'];
+            var value = myText.value;
+            var Reg = new RegExp(value,'gi');
+            //var Reg=/myText.value/gi;  //这种方法会使得里面的字符串变成正则项
+
+            //移除div所有子节点
+            var t=text.childNodes;  //先获取他的所有子节点
+            for(var i=0;i<t.length;i++){
+//                console.log(t[i]);
+                text.removeChild(t[i]);
+            }
+            //正则化看是否符合，并且添加节点或者直接替换input框内容value
+            for(var i=0;i<arr.length;i++){
+                if(Reg.test(arr[i])){
+                    var myValue=document.createTextNode(arr[i]);
+                    text.appendChild(myValue);
+                    text.appendChild(document.createElement("br"));
+//                    myText.value=arr[i];
+//                    break;
+                }
+            }
+            document.body.appendChild(text);
+//            document.body.insertBefore(text,myText);  //两种方案均可
+            //循环给每个子节点加上点击事件
+            for(var i=0;i<t.length;i++){
+                var tmp=t[i];
+                console.log(tmp);
+                tmp.onclick=function () {
+                    myText.value=this;
+                }
+            }
+//            text.childNodes.addEventListener('click',function () {
+////                        myText.value=this.value;
+//                console.log(this.innerText);
+//            })
+        }
+    </script>
+</head>
+<body>
+<h1>页面内有一个input输入框，实现在数组arr查询命中词并和autocomplete效果。</h1>
+<input type="text"  id="myText" onchange="f1()">
+<div id="div"></div>
+</body>
+</html>
