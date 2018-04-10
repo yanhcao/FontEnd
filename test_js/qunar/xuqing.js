@@ -28,6 +28,7 @@ rl.on('line', function(line){
     if(data.length == edgeNum+2+parseInt(data[edgeNum+1])){
         var count = 0;
 
+
         for(var i=0; i<nodeNum; i++){
             id.push(i);
         }
@@ -52,7 +53,7 @@ rl.on('line', function(line){
         id = [];
         data = [];
     }
-})
+});
 
 function find(p) {
     while(id[p] != p) {
