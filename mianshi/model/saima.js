@@ -9,7 +9,7 @@ var inputArr = [];
 rl.on('line', function (input) {
     inputArr.push(input);
     //全部parseInt
-    var line=input.split(' ').map(e=>parseInt(e));
+    var line=inputArr.split(' ').map(e=>parseInt(e));
     console.log(line);
     //去重
     line=[...new Set(line)];

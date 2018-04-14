@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>huahua</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<hr>
+<br>
+Email:<input type="email" name="user_email"/>
+Points: <input type="number" name="point" min="1" max="10"/>
+<script type="text/javascript">
+    var c=document.getElementById("myCanvas");
+    var cxt=c.getContext("2d");    //创建context对象，getContext对象是內建的h5对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的算法
+
+    //下面两行用来绘制一个红色的矩形
+    cxt.fillStyle="#FF0000";
+    cxt.fillRect(0,0,150,75);
+    //下面用来绘制一个圆
+    cxt.beginPath();
+    cxt.arc(70,18,15,0,Math.PI*2,false);  //70和18分别是x和y轴，15是半径，0是角度，PI是圆周率，false代表顺时针，true代表逆时针
+    cxt.stroke();
+</script>
+</body>
+</html>
