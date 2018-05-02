@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h5新功能</title>
+</head>
+<body>
+<!--sessionStorage、localStorage功能-->
+<input type="text" id="usename"><br>
+<input type="text" id="pwd"><br>
+<input type="button" value="存储" onclick="f1()">
+<input type="button" value="显示"  onclick="f2()">
+
+<script src="../jquery-3.2.1.js"></script>
+<script type="text/javascript">
+    function f1() {
+        var username=$('#usename').val();
+        var pwd=$('#pwd').val();
+        // sessionStorage.setItem('k_name',username);
+        // sessionStorage.setItem('k_pwd',pwd);
+        localStorage.setItem('k_name',username);
+        localStorage.setItem('k_pwd',pwd);
+        alert('存储完成');
+    }
+    function f2() {
+        // var name=sessionStorage.getItem('k_name');
+        // var pwd=sessionStorage.getItem('k_pwd');
+        var name=localStorage.getItem('k_name');
+        var pwd=localStorage.getItem('k_pwd');
+        // localStorage.removeItem('k_name');
+        // localStorage.removeItem('k_pwd');
+        localStorage.clear();  //删除所有的localStorage数据
+        alert(name+' '+pwd);
+    }
+</script>
+</body>
+</html>

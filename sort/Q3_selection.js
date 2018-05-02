@@ -1,5 +1,5 @@
 //选择排序
-var arr=[3,4,51,3,5,9,1,0,24];
+var arr=[3,4,51,5,9,1,0,24];
 var l=arr.length;
 for(var i=0;i<l-1;i++){
     var minIndex=i;
@@ -13,5 +13,6 @@ for(var i=0;i<l-1;i++){
     var temp=arr[i];
     arr[i]=minValue;
     arr[minIndex]=temp;
+    console.log(arr);
 }
 console.log(arr);

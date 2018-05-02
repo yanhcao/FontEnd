@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webstorage留言板</title>
+</head>
+<body>
+<div>
+    <textarea id="dcon"></textarea>
+</div>
+<div>
+    <input type="button" value="保存" onclick="f1()">
+    <input type="button" value="清除" onclick="f2()">
+</div>
+<div id="tcon"></div>
+
+<script src="../jquery-3.2.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        if(localStorage.getItem('content')!=null){
+            // $('#tcon').append('<div>'+localStorage.getItem('content')+'</div>');
+            $('#tcon').html(localStorage.getItem('content'));
+        }
+    });
+    function f1() {
+        var content=$('#dcon').val();
+        $('#tcon').append('<div>'+content+'</div>');
+        localStorage.setItem('content',$('#tcon').html());
+    }
+    function f2() {
+        $('#tcon').html('');
+        localStorage.clear();
+    }
+</script>
+</body>
+</html>

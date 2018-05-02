@@ -14,6 +14,7 @@ function quickSort(arr) {  //递归调用，这里必须有参数
             leftArr.push(arr[i]);
         }
     }
+    console.log(arr);
     return [].concat(quickSort(leftArr),[center],quickSort(rightArr)); //递归调用函数
 }
 console.log(quickSort(arr));

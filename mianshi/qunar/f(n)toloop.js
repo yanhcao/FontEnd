@@ -12,9 +12,9 @@ rl.on('line', function (input) {
     console.log(loop(n));
 });
 function loop(n) {
-    if(n==0||n==1){
-        return n;
-    }
+    // if(n==0||n==1){
+    //     return n;
+    // }
     // var a=0,
     //     b=1;
     // var res=0;

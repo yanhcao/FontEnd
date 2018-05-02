@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>本地数据库插入、查询删除功能</title>
+</head>
+<body>
+<!--制作一个本地数据库可以增加用户名和密码到本地数据库-->
+<!--可以通过用户名查询信息，显示到下面的div中-->
+<!--可以通过用户名删除数据库的信息-->
+<input type="text" id="username"><br>
+<input type="password" id="pwd">
+<input type="button" value="提交" onclick="Add()"><br>
+<input type="text" id="find">
+<input type="button" value="查询" onclick="Find()"><br>
+<input type="text" id="del">
+<input type="button" value="删除" onclick="Del()">
+<div id="content"></div>
+
+<script src="../jquery-3.2.1.js"></script>
+<script type="text/javascript">
+    //调用数据库
+    var db=openDatabase('myData','1.0','test db',1024*10);  //openDatabase中第一个参数是创建的数据库名称，第二个是版本号，第三个是数据库描述，第四个是数据库大小kb单位
+    function Add() {
+        //通过数据库调用事务，fx是事务的对象
+        db.transaction(function (fx) {
+            fx.executeSql('create table if not exists UserInfor(UserName TEXT, Pwd TEXT)', []); //第一个参数是sql语言，第二个参数是默认传入的信息，第三个和第四个都是回掉函数，成功或失败的函数
+            //UserInfor是表名
+            var name=$('#username').val();
+            var pwd=$('#pwd').val();
+            fx.executeSql('insert into UserInfor values(?,?)', [name,pwd], function () { alert('保存成功') });//(?,?)与[name,pwd]对应传参
+        });
+    }
+    function Find() {
+        var sql='select * from UserInfor where 1=1';
+        var name=$('#find').val();
+        if(name!=''){
+            sql+="and UserName='"+name+"'";
+            // alert('hello'+sql);  //sql UserName='txb';
+        }
+        db.transaction(function (fx) {
+            $('#content').html('');
+            fx.executeSql(sql,[],function (fx,rs) {
+                // alert(rs.rows.item(0).UserName);
+                for(var i=0;i<rs.rows.length;i++){
+                    var s='<div>'+rs.rows.item(i).UserName+'&nbsp;&nbsp;&nbsp;'+rs.rows.item(i).Pwd+'</div>';
+                    // alert(s);
+                    $('#content').append(s);
+                }
+            });
+        });
+    }
+
+    function Del() {
+        db.transaction(function (fx) {
+            var name=$('#del').val();
+            fx.executeSql('delete from UserInfor where UserName=?',[name],function () {
+                alert('删除成功');
+                Find(); //删除成功然后再调用显示方法进行显示
+            })
+        });
+    }
+</script>
+</body>
+</html>
