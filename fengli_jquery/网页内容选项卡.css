@@ -1,0 +1,50 @@
+/*对网页内容进行初始化布局*/
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tab{
+    border: 1px solid black;
+    position: relative;
+    left: 5px;
+    top: 5px;
+    width: 500px;
+    height: 300px;
+}
+.tab_menu{
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    width: 85%;
+    height: 30px;
+    float: left;
+    /*background-color: pink;*/
+}
+.tab_menu ul{
+    margin-left: -10px;
+}
+.tab_menu ul li{
+    float: left;
+    margin-left: 10px;
+    border: 1px solid gray;
+    line-height: 30px;
+    border-bottom: none;
+}
+.tab_box div{
+    position: absolute;
+    top:40px;
+    left: 5%;
+    width: 85%;
+    height: 240px;
+    border: 1px solid black;
+}
+/*选中元素的状态，呈现高亮*/
+.selected{
+    background-color: yellow;
+    opacity: 0.5;
+}
+.hover{
+    color: red;
+    text-decoration: underline;
+}

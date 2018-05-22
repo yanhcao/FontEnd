@@ -3,58 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>1.精简品牌与全部品牌</title>
-    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
-    <script>
-        $(function () {
-            var cat=$('li:gt(6):not(:last)');
-            cat.hide();
-            $('.SubBox').css('height','140px');
-            $('.showmore').css('top','110px');
-            var $toggle_Btn=$('div.showmore');
-            $toggle_Btn.click(
-                function () {
-                    if(cat.is(':visible')){
-                        cat.hide();
-                        $('.SubBox').css('height','140px');
-                        $('.showmore').css('top','110px');
-//                        $('.showmore').html('显示全部品牌');
-                        $(this).find('span').text('显示全部品牌');
-                        $('li').filter(":contains('佳能'), :contains('尼康')").addClass('promoted');
-                    }else{
-                        $('li').show();
-                        $('.SubBox').css('height','200px');
-                        $('.showmore').css('top','160px');
-//                        $('.showmore').html('精简显示品牌');
-                        $(this).find('span').text('精简显示品牌');   //很重要
-                        $('li').removeClass('promoted');
-                    }
-                }
-            )
-        });
-    </script>
     <link rel="stylesheet" href="1_css.css">
 </head>
 <body>
 <div class="SubBox">
     <ul>
-        <li class="promoted"><a href="#">佳能</a><span>(30440)</span></li>
-        <li><a href="#">索尼</a><span>(27220)</span></li>
-        <li><a href="#">三星</a><span>(20808)</span></li>
-        <li class="promoted"><a href="#">尼康</a><span>(30440)</span></li>
-        <li><a href="#">松下</a><span>(30440)</span></li>
-        <li><a href="#">卡西欧</a><span>(8242)</span></li>
-        <li><a href="#">富士</a><span>(14894)</span></li>
-        <li><a href="#">科达</a><span>(9520)</span></li>
-        <li><a href="#">宾得</a><span>(2195)</span></li>
-        <li><a href="#">理光</a><span>(4114)</span></li>
-        <li><a href="#">奥林巴斯</a><span>(12205)</span></li>
-        <li><a href="#">明基</a><span>(1466)</span></li>
-        <li><a href="#">爱国者</a><span>(3091)</span></li>
-        <li><a href="#">其他品牌相机</a><span>(7275)</span></li>
+        <li class="promoted"><a href="#">佳能</a><em>(30440)</em></li>
+        <li><a href="#">索尼</a><em>(27220)</em></li>
+        <li><a href="#">三星</a><em>(20808)</em></li>
+        <li class="promoted"><a href="#">尼康</a><em>(30440)</em></li>
+        <li><a href="#">松下</a><em>(30440)</em></li>
+        <li><a href="#">卡西欧</a><em>(8242)</em></li>
+        <li><a href="#">富士</a><em>(14894)</em></li>
+        <li><a href="#">科达</a><em>(9520)</em></li>
+        <li><a href="#">宾得</a><em>(2195)</em></li>
+        <li><a href="#">理光</a><em>(4114)</em></li>
+        <li><a href="#">奥林巴斯</a><em>(12205)</em></li>
+        <li><a href="#">明基</a><em>(1466)</em></li>
+        <li><a href="#">爱国者</a><em>(3091)</em></li>
+        <li><a href="#">其他品牌相机</a><em>(7275)</em></li>
     </ul>
     <div class="showmore">
         <span>显示全部品牌</span>
     </div>
 </div>
+
+<script type="text/javascript" src="../jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        var cat=$('li:gt(6):not(:last)');
+        cat.hide();
+        $('.SubBox').css('height','140px');
+        $('.showmore').css('top','110px');
+        var $toggle_Btn=$('div.showmore');
+        $toggle_Btn.click(
+            function () {
+                if(cat.is(':visible')){
+                    cat.hide();
+                    $('.SubBox').css('height','140px');
+                    $('.showmore').css('top','110px');
+//                        $('.showmore').html('显示全部品牌');
+                    $(this).find('span').css('background', 'url(down.jpg) no-repeat fixed left').text('显示全部品牌');
+                    $('li').filter(":contains('佳能'), :contains('尼康')").addClass('promoted');
+                }else{
+                    $('li').show();
+                    $('.SubBox').css('height','200px');
+                    $('.showmore').css('top','160px');
+//                        $('.showmore').html('精简显示品牌');
+                    $(this).find('span').css('background', 'url(up.jpg) no-repeat fixed top').text('精简显示品牌');   //很重要
+                    $('li').removeClass('promoted');
+                }
+            }
+        )
+    });
+</script>
 </body>
 </html>

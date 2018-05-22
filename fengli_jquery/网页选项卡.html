@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页选项卡</title>
+    <link rel="stylesheet" href="网页内容选项卡.css">
+</head>
+<body>
+<div class="tab">
+    <div class="tab_menu">
+        <ul>
+            <li class="selected">时事</li>   <!--默认选中时事-->
+            <li>体育</li>
+            <li>娱乐</li>
+        </ul>
+    </div>
+    <!--内容部分div-->
+    <div class="tab_box">
+        <div>时事内容部分</div>
+        <div class="hide">体育内容部分</div>
+        <div class="hide">娱乐内容部分</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../jquery-3.2.1.js"></script>
+<script type="text/javascript">
+    //给li绑定单机事件
+    var li=$('div.tab_menu ul li');
+    $('.hide').hide();
+    li.click(function () {
+        //将单机的li高亮，其余的同辈元素不高亮
+        $(this).addClass('selected').siblings().removeClass('selected');
+        //同时只显示对应的box框
+        var index=li.index(this);  //获取当前li在所有li中的索引位置
+        $('div.tab_box > div').eq(index).show().siblings().hide(); //只显示当前索引，其余隐藏
+    }).hover(function () {   //增加过度效果
+        $(this).addClass('hover');
+    }, function () {
+        $(this).removeClass('hover');
+    });
+</script>
+</body>
+</html>
