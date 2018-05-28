@@ -1,0 +1,16 @@
+table{
+    border: 1px solid black;
+    text-align: center;
+    width: 20%;
+}
+table td{
+    width: 33%;
+}
+.parent{
+    background-color: lightgray;
+    border-top: 1px solid black;
+    text-align: left;
+}
+.selected{
+    background-color: lightblue;
+}

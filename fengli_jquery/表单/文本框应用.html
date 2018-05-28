@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本框应用</title>
+    <link rel="stylesheet" href="../css/文本框应用.css">
+    <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<!--单行文本框应用-->
+<form action="#" method="post" id="regForm">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <lable for="username">名称:</lable>
+            <input type="text" id="username">
+        </div>
+        <div>
+            <lable for="pwd">密码:</lable>
+            <input type="password" id="pwd">
+        </div>
+        <div>
+            <lable for="msg">详细信息:</lable>
+            <textarea id="msg"></textarea>
+        </div>
+    </fieldset>
+</form>
+
+<!--多行文本框应用,网站的评论框-->
+<form action="#">
+    <div class="msg">
+        <div class="msg_caption">
+            <span class="bigger">放大</span>
+            <span class="smaller">缩小</span>
+            <span class="up">向上</span>
+            <span class="down">向下</span>
+        </div>
+        <div style="margin-left: 4%">
+            <textarea id="comment" cols="30" rows="10">多行文本高度变化多行\\
+                文本高度变化多行文本高度变化多行文本高度变化\\
+                多行文本高度变化多行文本高度变化多行文本高度变化\\
+                多行文本高度变化多行文本高度变化多行文本高度变化\\
+                多行文本高度变化多行文本高度变化多行文本高度变化多行文本高度变化</textarea>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(function () {
+       $('.bigger').click(function () {
+           if($('#comment').height()<200){
+               // $('#comment').height($('#comment').height+20);  //改变生硬的转变方式
+               $('#comment').animate({height :'+=20'}, 400); //400ms后变化
+           }
+       });
+        $('.smaller').click(function () {
+            if($('#comment').height()>40){
+                $('#comment').animate({height :'-=20'}, 400);
+            }
+        });
+        $('.up').click(function () {
+            $('#comment').animate({scrollTop :'-=20'}, 400);
+        });
+        $('.down').click(function () {
+            $('#comment').animate({scrollTop :'+=20'}, 400);
+        });
+    });
+</script>
+</body>
+</html>

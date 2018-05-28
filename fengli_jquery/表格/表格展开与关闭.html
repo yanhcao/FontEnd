@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格展开与关闭</title>
+    <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="../css/表格展开与关闭.css">
+</head>
+<body>
+<!--根据输入的文本来筛选-->
+筛选：<input type="text" id="filter">
+<table>
+    <thead>
+    <tr><th>姓名</th><th>性别</th><th>暂住地</th></tr>
+    </thead>
+    <tbody>
+    <tr class="parent" id="row1"><td colspan="3">前台设计组</td></tr>
+    <tr class="child_row1"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+    <tr class="child_row1"><td>李四</td><td>女</td><td>浙江杭州</td></tr>
+
+    <tr class="parent" id="row2"><td colspan="3">前台开发组</td></tr>
+    <tr class="child_row2"><td>王五</td><td>男</td><td>湖南长沙</td></tr>
+    <tr class="child_row2"><td>赵六</td><td>男</td><td>浙江温州</td></tr>
+
+    <tr class="parent" id="row3"><td colspan="3">后台开发组</td></tr>
+    <tr class="child_row3"><td>Rain</td><td>男</td><td>陕西西安</td></tr>
+    <tr class="child_row3"><td>MaxMan</td><td>女</td><td>浙江杭州</td></tr>
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $(function () {
+        $('tr.parent').click(function () {  //获取父行
+            $(this)
+                .toggleClass('selected')  //添加或删除高亮
+                .siblings('.child_'+this.id).toggle();  //隐藏或者显示子行
+        }).click(); //进入页面默认是所有收缩起来
+        //默认选择带有王五的一行高亮
+        // $("tr:contains('王五')").addClass('selected');
+
+        //筛选出含有李的名字
+        // $('table tbody').hide().filter(":contains('李')").show();
+
+        //筛选
+        $('#filter').keyup(function () {
+            $('table tbody tr').hide()
+                .filter(":contains('"+$(this).val()+"')").show();
+        });
+    });
+</script>
+</body>
+</html>

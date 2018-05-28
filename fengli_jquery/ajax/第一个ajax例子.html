@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过ajax从服务器算取回一个“Hello Ajax！”</title>
+    <style type="text/css">
+        #resText{
+            width: 200px;
+            /*height: 100px;*/
+            background-color: #99CCFF;
+            /*overflow: scroll;*/
+        }
+    </style>
+</head>
+<body>
+<!--原生js实现ajax-->
+<!--<input type="button" value="Ajax提交" onclick="Ajax();"/>-->
+<!--&lt;!&ndash;该div用来显示文本&ndash;&gt;-->
+<!--<div id="resText"></div>-->
+
+<!--jquery实现ajax-->
+<input type="button" value="Ajax获取" id="send">
+<div class="comment">已有评论：</div>
+<div id="resText"></div>
+</body>
+
+<script type="text/javascript" src="../../jquery-3.2.1.js"></script>
+<script type="text/javascript">
+//    原生js实现ajax
+//    function Ajax() {
+//        var xhr = null;
+//        //实例化xhr,分为ie与w3c版本
+//        if(window.ActiveXObject){
+//            xhr=new ActiveXObject('Microsift.XMLHTTP');
+//        }else if(window.XMLHttpRequest){
+//            xhr=new XMLHttpRequest();
+//        }
+//        xhr.open('GET', 'test.php', true); //调用open()方法并采用异步方式
+//        //回调函数
+//        xhr.onreadystatechange=function () {
+//            if(xhr.readyState==4){
+//                if(xhr.status>=200 && xhr.status<300){
+//                    document.getElementById('resText').innerHTML=xhr.responseText;
+//                }
+//            }
+//        };
+//        xhr.send(null);
+//    }
+
+//    jquery实现ajax
+    $(function () {
+        $('#send').click(function () {
+//            $('#resText').load('test_ajax.html');
+            //load()加上第二个参数可以筛选从test_ajax.html获取的数据
+            $('#resText').load('test_ajax.html  .para');
+        });
+    });
+</script>
+</html>
