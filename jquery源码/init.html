@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>init中的例子</title>
+</head>
+<body>
+<ul></ul>
+<script src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var str='<li>1</li><li>2</li><li>3</li><script>alert(3)<\/script>';
+        var arr=$.parseHTML(str,true);
+        $.each(arr,function (i) {
+            $('ul').append(arr[i]);
+        });
+        // var arr1=['a','b'];
+        var arr1={
+            0:'a',
+            1:'b',
+            length:2
+        };  //merge进行json形式合并
+        var arr2=['c','d'];
+        console.log($.merge(arr1,arr2)); //merge对外只能合并数组，但是在jquery内部可以合并json
+
+
+        $('<li>',{title:'hi', html:'abcd'}).appendTo('ul');//title是属性，html是方法
+    });
+</script>
+</body>
+</html>

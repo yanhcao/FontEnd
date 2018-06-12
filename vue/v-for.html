@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环v-for</title>
+</head>
+<body>
+    <h1>循环v-for</h1>
+    <div class="vue_for">
+        <ul>
+            <li v-for="i in arr">
+                {{i}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(i,index) in items">
+                {{index+1}}. {{i.name}}-{{i.age}}
+            </li>
+        </ul>
+
+        <template v-for="(i,index) in items">
+            <h3>{{index+1}}.{{i.name}}</h3>
+            <p>Age-{{i.age}}</p>
+        </template>
+
+        <!--直接让对象通过key-value形式显示，双层循环即可-->
+        <template v-for="(i,index) in items">
+            <template v-for="(key,value) in i">
+                {{key}}-{{value}}
+            </template>
+        </template>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'.vue_for',
+            data:{
+                //数组形式
+                arr:['aa','bb','cc'],
+                //Object形式
+                items:[
+                    {name:'Foo',age:24},
+                    {name:'xb',age:18},
+                    {name:'yh',age:20}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

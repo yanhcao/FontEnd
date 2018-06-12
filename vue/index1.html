@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue的初步使用</title>
+</head>
+<body>
+<div id="vue-app">
+    <!--调用属性不加括号，调用方法需要加括号,方法调用可以加参数-->
+    <h1>{{ greet('afternon') }}</h1>
+    <p>Name:{{ name }}</p>  <!--{{  }}是固定语法用来拿到data中的数据-->
+    <p>Job:{{  job }}</p>
+    <!--属性绑定:v-bind-->
+    <a v-bind:href="website">百度</a>
+    <input type="text" v-bind:value="name"/>
+
+    <p v-html="websiteTag"></p>
+</div>   <!--创建一个根容器名称vue-app-->
+<script type="text/javascript" src="vue.js"></script>
+
+<script src="./js/app.js"></script>
+</body>
+</html>

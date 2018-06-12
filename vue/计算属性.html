@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+</head>
+<body>
+<div id="vue-app">
+    <h1>Computed计算属性</h1>
+    <button @click="a++">Add to A</button>
+    <button @click="b++"> Add to B</button>
+    <p>A-{{a}}</p>
+    <p>B-{{b}}</p>
+    <p>Age+A={{addToA}}</p>
+    <p>Age+B={{addToB}}</p>
+</div>
+<script src="vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#vue-app',
+        data:{
+            a:0,
+            b:0,
+            age:20
+        },
+        methods:{
+            /*addToA:function () {
+                console.log('aa');
+                return this.age+this.a;
+            },
+            addToB:function () {
+                console.log('bb');
+                return this.age+this.b;
+            }*/
+        },
+        computed:{
+            addToA:function () {
+                console.log('aa');
+                return this.age+this.a;
+            },
+            addToB:function () {
+                console.log('bb');
+                return this.age+this.b;
+            }
+        }
+    });
+</script>
+</body>
+</html>

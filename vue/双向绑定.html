@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向数据绑定</title>
+</head>
+<body>
+<div id="vue-app">
+    <h1>双向数据绑定/input/select/textarea</h1>
+    <label>姓名：</label>
+    <input ref="name" type="text" @keyup="logName">
+    <span>{{name}}</span><br>
+    <label>年龄：</label>
+    <input type="text" v-model="age">
+    <span>{{age}}</span>
+
+</div>
+<script src="vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#vue-app',
+        data:{
+            name:'',
+            age:''
+        },
+        methods:{
+            logName:function () {
+                this.name=this.$refs.name.value;
+                // console.log(this.$refs.name.value);
+            }
+            // logAge:function () {
+            //     this.age=this.$refs.age.value;
+            // }
+        }
+    });
+</script>
+</body>
+</html>

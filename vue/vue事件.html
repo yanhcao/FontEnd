@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue事件</title>
+    <style type="text/css">
+        #canvas{
+            width: 600px;
+            padding: 230px 20px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="vue-app">
+    <h1>Events</h1>
+    <!--添加事件来改变age的值   age++  -->
+    <!--对于方法而言，在{{}}中的方法必须加()，在click等事件中，可以不加-->
+    <button v-on:click.once="add(1)">长一岁</button>
+    <button @click="sub(1)">减一岁</button>
+    <button v-on:dblclick="add(10)">长十岁</button>
+    <button @dblclick="sub(10)">减十岁</button>
+    <p>My age is {{age}}.</p>
+
+    <!--鼠标事件-->
+    <div id="canvas" v-on:mousemove="updateXY">
+        {{x}},{{y}} -
+        <!--<span v-on:mousemove="stopMoving">Stop Moving</span>-->
+        <span v-on:mousemove.stop="">Stop Moving</span>
+    </div>
+    <a href="http://www.baidu.com" @click.prevent="alert()">百度</a>
+</div>
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#vue-app',
+        data:{
+            age:25,
+            x:0,
+            y:0
+        },
+        methods:{
+            add:function (change) {
+                this.age+=change;
+            },
+            sub:function (change) {
+                this.age-=change;
+            },
+            //鼠标事件，滚动鼠标获取当前位置x，y信息
+            updateXY:function (event) {
+                // console.log(event);
+                //screenX,screenY,clientX,offsetX
+                this.x=event.offsetX;
+                this.y=event.offsetY;
+            },
+            //组织冒泡事件
+            stopMoving:function (event) {
+                event.stopPropagation();
+            },
+            alert:function () {
+                alert('hello world');
+            }
+        }
+    });
+</script>
+</body>
+</html>

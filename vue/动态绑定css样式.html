@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态绑定css样式</title>
+    <link rel="stylesheet" href="css/动态绑定css样式.css">
+</head>
+<body>
+<div id="vue_css">
+    <h1>动态css Class</h1>
+    <h2>实例1</h2>
+    <div @click="changeColor=!changeColor, changeLength=!changeLength" v-bind:class="{changeColor:changeColor,changeLength:changeLength}">
+        <span>Henry</span>
+    </div>
+
+    <h2>实例2</h2>
+    <button @click="changeColor=!changeColor">change color</button>
+    <button @click="changeLength=!changeLength">change length</button>
+
+    <div v-bind:class="compClasses">
+        <span>Henry</span>
+    </div>
+</div>
+
+<script src="vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#vue_css',
+        data:{
+            changeColor:false,
+            changeLength:false
+        },
+        computed:{
+            compClasses:function () {
+                return{
+                    changeColor:this.changeColor,
+                    changeLength:this.changeLength
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

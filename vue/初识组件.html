@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初识组件</title>
+</head>
+<body>
+<h1>初识组件</h1>
+<div id="one">
+    <greeting></greeting>
+</div>
+<div id="two">
+    <greeting></greeting>
+</div>
+
+<script src="vue.js"></script>
+<script type="text/javascript">
+    //组件
+    Vue.component('greeting',{   //将greeting当作标签来使用
+        //template中的内容必须放在一个根标签中，如下面将button喝内容都放在p标签中
+        template:`
+        <p>{{name}}:大家好，给大家介绍一下我的男朋友@唐显斌
+        <button @click="changeName">改名</button>
+        </p>`,
+        data:function () {
+            return {
+                name:'CYH'  //这里返回的name是每个部分使用的name
+            }
+        },
+        methods:{
+            changeName:function () {
+                this.name='baby';  //通过修改每个部分的name
+            }
+        }
+    });
+    //只留下Element,其余全部用组件实现
+    new Vue({
+        el:'#one'
+    });
+    new Vue({
+        el:'#two'
+    });
+</script>
+</body>
+</html>

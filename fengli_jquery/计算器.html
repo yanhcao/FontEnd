@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A computer</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        .cell{
+            position: relative;
+            width: 21%;
+            margin: 2%;
+            padding-top: 21%; /*为什么是21%，padding是基于宽度的，所以与width相同即可形成一个方形*/
+            border-radius: 100px; /*为什么是数值*/
+            font-size: 30px;
+            float:left;
+            background: gray;
+            color: white;
+            cursor: pointer; /*鼠标光标的形状*/
+        }
+        .key_input{
+            position: relative;
+            width: 100%;
+            padding-top: 44%;
+            float: right;
+        }
+        input{
+            position: absolute;
+            width: 100%;
+            padding-top: 44%;
+            top: 50%;
+            right: 0;
+            font-size: 30px;
+            text-align: right;
+            transform: translateY(-60%);
+        }
+        #cell0{
+            width: 44%;
+        }
+        .inner{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transform: translateY(-50%);
+        }
+        #inner0{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="key_input"><input type="text"></div>
+    <div class="keybord-box">
+        <div class="cell inner_reset"><div class="inner">AC</div></div>
+        <div class="cell inner_negtive"><div  class="inner">+/-</div></div>
+        <div class="cell inner_del"><div  class="inner">del</div></div>
+        <div class="cell inner_operate"><div  class="inner divide">/</div></div>
+        <div class="cell inner_input"><div class="inner">7</div></div>
+        <div class="cell inner_input"><div  class="inner">8</div></div>
+        <div class="cell inner_input"><div  class="inner">9</div></div>
+        <div class="cell inner_operate"><div  class="inner multi">x</div></div>
+        <div class="cell inner_input"><div  class="inner">4</div></div>
+        <div class="cell inner_input"><div  class="inner">5</div></div>
+        <div class="cell inner_input"><div  class="inner">6</div></div>
+        <div class="cell inner_operate"><div  class="inner sub">-</div></div>
+        <div class="cell inner_input"><div  class="inner">1</div></div>
+        <div class="cell inner_input"><div  class="inner">2</div></div>
+        <div class="cell inner_input"><div  class="inner">3</div></div>
+        <div class="cell inner_operate"><div  class="inner add">+</div></div>
+        <div class="cell inner_input" id="cell0"><div  class="inner" id="inner0">0</div></div>
+        <div class="cell inner_input"><div  class="inner">.</div></div>
+        <div class="cell inner_operate"><div  class="inner equal">=</div></div>
+    </div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(function () {
+    var srcShow=$('input');  //input框
+    srcShow.html('0');
+    var result='', //输出结果
+        result1='', //第一个数字
+        result2='';  //第二个数字
+    var change=0; //运算符
+    var num=$('.inner_input.inner'); //数字键
+    var equal=$('.equal'); //等于符号
+    var calcu=$('.inner_operate.inner'); //运算符
+    var reset=$('.inner_reset');  //AC清零符
+    var negtive=$('.inner_negtive'), //负号键
+        neg=1;
+    var del=$('.inner_del');  //退格符
+
+    //四则运算
+    var digits=1000;
+    var enlarge=function (n) {
+        return Number((n*digits).toFixed(0));
+    };
+    calcu.click(function () {
+        result1=parseFloat(srcShow.text);
+        if($(this).hasClass('add')){
+            change=1;
+        }
+        if($(this).hasClass('sub')){
+            change=2;
+        }
+        if($(this).hasClass('multi')){
+            change=3;
+        }
+        if($(this).hasClass('divide')){
+            change=4;
+        }
+        result='';
+        srcShow.html('0');
+        neg=1;
+    });
+
+    //等于操作
+    equal.click(function () {
+        if(result=''){
+            result1=parseFloat(srcShow.text());
+        }else {
+            result2=parseFloat(srcShow.text());
+        }
+        var r1=enlarge(result1);
+        var r2=enlarge(result2);
+        if(change==1){
+            result=(r1+r2)/digits;
+        }
+        if(change==2){
+            result=(r1-r2)/digits;
+        }
+        if(change==3){
+            result=(r1*r2)/(digits*digits);
+        }
+        if(change==4){
+            result=r1/r2;
+        }
+        srcShow.html(result);
+    });
+
+});
+
+    // add:function(a,b){
+    //     var largeA=this.enlarge(a);
+    //     var largeB=this.enlarge(b);
+    //     return (largeA+largeB)/this.digits
+    // }
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实例化多个vue对象</title>
+</head>
+<body>
+<h1>实例化多个vue对象</h1>
+<div id="one">
+    <h3>{{title}}</h3>
+    <p>{{greet}}</p>
+</div>
+<div id="two">
+    <h3>{{title}}</h3>
+    <p>{{greet}}</p>
+    <button @click="change">修改1</button>
+</div>
+
+<script src="vue.js"></script>
+<script type="text/javascript">
+    var one=new Vue({
+        el:'#one',
+        data:{
+            title:'hello one'
+        },
+        computed:{
+            greet:function () {
+                return '你好one';
+            }
+        }
+    });
+    var two=new Vue({
+        el:'#two',
+        data:{
+            title:'hello two'
+        },
+        methods:{
+            change:function () {
+                one.title='我被2修改了';
+            }
+        },
+        computed:{
+            greet:function () {
+                return '你好two';
+            }
+        }
+    });
+</script>
+</body>
+</html>
