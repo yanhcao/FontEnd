@@ -3,10 +3,10 @@ var l=arr.length;
 end:for(var i=0; i<l;i++){
     var flag=true;
     for(var j=i+1; j<l;j++){
-        if(arr[i]>arr[j]){
-            var item=arr[i];
-            arr[i]=arr[j];
-            arr[j]=item;
+        if(arr[j]>arr[j+1]){
+            var item=arr[j];
+            arr[j]=arr[j+1];
+            arr[j+1]=item;
             flag=false;
         }
     }

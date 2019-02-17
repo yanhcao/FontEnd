@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue组件化</title>
+</head>
+<body>
+<div id="app">
+    <message title="I love" content="xb"></message>
+</div>
+
+<script crossorigin="anonymous" integrity="sha384-bNxnjzgkQ1TIrVCdltvL1vdzkGeB40CNLb18ktPIbADQdaXdor3u5iF4Q5udkrXW" src="https://lib.baomitu.com/vue/2.6.6/vue.js"></script>
+<script>
+    var Message=Vue.extend({
+        props:['title','content'],
+        data:function(){
+            return {
+                desc:'123'
+            }
+        },
+        template:'<div><h1>{{title}} {{content}}</h1><p>{{content}}</p><h3>{{desc}}</h3></div>'
+    });
+    Vue.component('message',Message);
+
+    // var Message=Vue.component('message',{
+    //     props:['title','content'],
+    //     template:'<h1>{{title}}</h1><p>{{content}}</p>'
+    // });
+
+    var vm=new Vue({
+        el:'#app'
+    });
+</script>
+</body>
+</html>

@@ -18,8 +18,6 @@ rl.on('line', function (input) {
     line.sort((a,b)=>a-b);
     console.log(line);
     // console.log(+inputArr[0]);//转化成数字类型
-    inputArr = [];
-
 });
 // //多行输入，输入的第一个数据是接下来要输入的行数
 // const readline = require('readline');
@@ -34,6 +32,5 @@ rl.on('line', function (input) {
 //     if (inputArr.length == (nLine + 1)) {
 //         var arr = inputArr.slice(1);
 //         console.log(arr);
-//         inputArr = [];
 //     }
 // });

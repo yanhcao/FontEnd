@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue数据绑定</title>
+</head>
+<body>
+<div id="app">
+    <h1>Your input is {{message}}</h1>
+    <input type="text" v-model="message">
+</div>
+
+<script crossorigin="anonymous" integrity="sha384-bNxnjzgkQ1TIrVCdltvL1vdzkGeB40CNLb18ktPIbADQdaXdor3u5iF4Q5udkrXW" src="https://lib.baomitu.com/vue/2.6.6/vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            message:'Hello world,I am vue.js'
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>{{a}}</p>
+    <!--<p>{{b}}</p>-->
+    <!--<my-component content="mycontent" title="mytitle"></my-component>-->
+</div>
+
+<script type="text/javascript" src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            a:1
+        },
+        method:{
+            alert:function () {
+                alert(this.a);
+            }
+        }
+    });
+    // vm.$set('b',2);  //实例化后加入响应式变量的方法
+
+    // var myComponent=Vue.component('my-component',{
+    //     props:['title','content'],
+    //     data:function(){
+    //       return{
+    //           res:'123'
+    //       }
+    //     },
+    //     template:'<h1>{{title}}</h1><p>{{content}}</p><p>{{res}}</p>'
+    // });
+
+</script>
+</body>
+</html>

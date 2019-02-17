@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue方法绑定v-on</title>
+</head>
+<body>
+<div id="app">
+    <button @click="alert">BUTTON</button>
+    <p v-for="c in count">{{c | pluralize 'item'}} {{c | pluralize 'nd' 'td' 'rd' 'th'}}</p>
+    <p>{{a | uppercase}}</p> <!--vue2.0以后的版本都去掉了过滤器-->
+</div>
+
+<script crossorigin="anonymous" integrity="sha384-bNxnjzgkQ1TIrVCdltvL1vdzkGeB40CNLb18ktPIbADQdaXdor3u5iF4Q5udkrXW" src="https://lib.baomitu.com/vue/2.6.6/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            a:'vue',
+            count:[1,2,3,4,5]
+        },
+        methods:{
+            alert:function(){
+                alert(this.a);
+            }
+        }
+    })
+</script>
+</body>
+</html>
